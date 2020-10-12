@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Ex type 1</th>
+      <th>Ex time 1</th>
+      <th>Ex amount 1</th>
+      <th>Ex type 2</th>
+      <th>Ex time 2</th>
+      <th>Ex amount 2</th>
+      <th>Ex type 3</th>
+      <th>Ex time 3</th>
+      <th>Ex amount 3</th>
+      <th>Meal asa</th>
+      <th>Meal hiru</th>
+      <th>Meal ban</th>
+      <th>Snack</th>
+      <th>Snack memo</th>
+      <th>Condition</th>
+      <th>Day</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.user_id %></td>
+        <td><%= entry.weight %></td>
+        <td><%= entry.height %></td>
+        <td><%= entry.ex_type_1 %></td>
+        <td><%= entry.ex_time_1 %></td>
+        <td><%= entry.ex_amount_1 %></td>
+        <td><%= entry.ex_type_2 %></td>
+        <td><%= entry.ex_time_2 %></td>
+        <td><%= entry.ex_amount_2 %></td>
+        <td><%= entry.ex_type_3 %></td>
+        <td><%= entry.ex_time_3 %></td>
+        <td><%= entry.ex_amount_3 %></td>
+        <td><%= entry.meal_asa %></td>
+        <td><%= entry.meal_hiru %></td>
+        <td><%= entry.meal_ban %></td>
+        <td><%= entry.snack %></td>
+        <td><%= entry.snack_memo %></td>
+        <td><%= entry.condition %></td>
+        <td><%= entry.day %></td>
+        <td><%= entry.memo %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry', new_entry_path %>
