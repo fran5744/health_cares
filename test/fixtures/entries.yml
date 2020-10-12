@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: MyString
+  weight: 1
+  height: 1
+  ex_type_1: MyString
+  ex_time_1: MyString
+  ex_amount_1: 1
+  ex_type_2: MyString
+  ex_time_2: MyString
+  ex_amount_2: 1
+  ex_type_3: MyString
+  ex_time_3: MyString
+  ex_amount_3: 1
+  meal_asa: false
+  meal_hiru: false
+  meal_ban: false
+  snack: false
+  snack_memo: MyText
+  condition: 1
+  day: 2020-10-09
+  memo: MyText
+
+two:
+  user_id: MyString
+  weight: 1
+  height: 1
+  ex_type_1: MyString
+  ex_time_1: MyString
+  ex_amount_1: 1
+  ex_type_2: MyString
+  ex_time_2: MyString
+  ex_amount_2: 1
+  ex_type_3: MyString
+  ex_time_3: MyString
+  ex_amount_3: 1
+  meal_asa: false
+  meal_hiru: false
+  meal_ban: false
+  snack: false
+  snack_memo: MyText
+  condition: 1
+  day: 2020-10-09
+  memo: MyText

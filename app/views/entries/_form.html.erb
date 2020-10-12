@@ -1,0 +1,117 @@
+<%= form_with(model: entry, local: true) do |form| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+      <% entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :entry_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.number_field :weight, id: :entry_weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.number_field :height, id: :entry_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex_type_1 %>
+    <%= form.text_field :ex_type_1, id: :entry_ex_type_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex_time_1 %>
+    <%= form.text_field :ex_time_1, id: :entry_ex_time_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex_amount_1 %>
+    <%= form.number_field :ex_amount_1, id: :entry_ex_amount_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex_type_2 %>
+    <%= form.text_field :ex_type_2, id: :entry_ex_type_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex_time_2 %>
+    <%= form.text_field :ex_time_2, id: :entry_ex_time_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex_amount_2 %>
+    <%= form.number_field :ex_amount_2, id: :entry_ex_amount_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex_type_3 %>
+    <%= form.text_field :ex_type_3, id: :entry_ex_type_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex_time_3 %>
+    <%= form.text_field :ex_time_3, id: :entry_ex_time_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex_amount_3 %>
+    <%= form.number_field :ex_amount_3, id: :entry_ex_amount_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meal_asa %>
+    <%= form.check_box :meal_asa, id: :entry_meal_asa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meal_hiru %>
+    <%= form.check_box :meal_hiru, id: :entry_meal_hiru %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meal_ban %>
+    <%= form.check_box :meal_ban, id: :entry_meal_ban %>
+  </div>
+
+  <div class="field">
+    <%= form.label :snack %>
+    <%= form.check_box :snack, id: :entry_snack %>
+  </div>
+
+  <div class="field">
+    <%= form.label :snack_memo %>
+    <%= form.text_area :snack_memo, id: :entry_snack_memo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :condition %>
+    <%= form.number_field :condition, id: :entry_condition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.date_select :day, id: :entry_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memo %>
+    <%= form.text_area :memo, id: :entry_memo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
