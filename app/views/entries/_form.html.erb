@@ -17,87 +17,87 @@
   </div>
 
   <div class="field">
-    <%= form.label :weight %>
+    <%= form.label :体重 %>
     <%= form.number_field :weight, id: :entry_weight %>
   </div>
 
   <div class="field">
-    <%= form.label :height %>
+    <%= form.label :身長 %>
     <%= form.number_field :height, id: :entry_height %>
   </div>
 
   <div class="field">
-    <%= form.label :ex_type_1 %>
-    <%= form.text_field :ex_type_1, id: :entry_ex_type_1 %>
+    <%= form.label :運動種類 %>
+    <%= form.select :faculty,[["ヨガ","ヨガ"],["筋トレ","筋トレ"]],include_blank: "" %>
+    </div>
+
+  <div class="field">
+    <%= form.label :運動時間 %>
+    <%= form.select :faculty,[["30分","30分"],["1時間","1時間"]],include_blank: "" %>
   </div>
 
   <div class="field">
-    <%= form.label :ex_time_1 %>
-    <%= form.text_field :ex_time_1, id: :entry_ex_time_1 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ex_amount_1 %>
+    <%= form.label :カロリー %>
     <%= form.number_field :ex_amount_1, id: :entry_ex_amount_1 %>
   </div>
 
   <div class="field">
-    <%= form.label :ex_type_2 %>
-    <%= form.text_field :ex_type_2, id: :entry_ex_type_2 %>
+    <%= form.label :運動種類 %>
+    <%= form.select :faculty,[["ヨガ","ヨガ"],["筋トレ","筋トレ"]],include_blank: "" %>
   </div>
 
   <div class="field">
-    <%= form.label :ex_time_2 %>
-    <%= form.text_field :ex_time_2, id: :entry_ex_time_2 %>
+    <%= form.label :運動時間 %>
+    <%= form.select :faculty,[["30分","30分"],["1時間","1時間"]],include_blank: "" %>
   </div>
 
   <div class="field">
-    <%= form.label :ex_amount_2 %>
+    <%= form.label :カロリー %>
     <%= form.number_field :ex_amount_2, id: :entry_ex_amount_2 %>
   </div>
 
   <div class="field">
-    <%= form.label :ex_type_3 %>
-    <%= form.text_field :ex_type_3, id: :entry_ex_type_3 %>
+    <%= form.label :運動種類 %>
+    <%= form.select :faculty,[["ヨガ","ヨガ"],["筋トレ","筋トレ"]],include_blank: "" %>
   </div>
 
   <div class="field">
-    <%= form.label :ex_time_3 %>
-    <%= form.text_field :ex_time_3, id: :entry_ex_time_3 %>
+    <%= form.label :運動時間 %>
+    <%= form.select :faculty,[["30分","30分"],["1時間","1時間"]],include_blank: "" %>
   </div>
 
   <div class="field">
-    <%= form.label :ex_amount_3 %>
+    <%= form.label :カロリー %>
     <%= form.number_field :ex_amount_3, id: :entry_ex_amount_3 %>
   </div>
 
   <div class="field">
-    <%= form.label :meal_asa %>
+    <%= form.label :朝 %>
     <%= form.check_box :meal_asa, id: :entry_meal_asa %>
   </div>
 
   <div class="field">
-    <%= form.label :meal_hiru %>
+    <%= form.label :昼 %>
     <%= form.check_box :meal_hiru, id: :entry_meal_hiru %>
   </div>
 
   <div class="field">
-    <%= form.label :meal_ban %>
+    <%= form.label :晩 %>
     <%= form.check_box :meal_ban, id: :entry_meal_ban %>
   </div>
 
   <div class="field">
-    <%= form.label :snack %>
+    <%= form.label :間食 %>
     <%= form.check_box :snack, id: :entry_snack %>
   </div>
 
   <div class="field">
-    <%= form.label :snack_memo %>
+    <%= form.label :食べたもの %>
     <%= form.text_area :snack_memo, id: :entry_snack_memo %>
   </div>
 
   <div class="field">
-    <%= form.label :condition %>
+    <%= form.label :体調 %>
     <%= form.number_field :condition, id: :entry_condition %>
   </div>
 
@@ -107,7 +107,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :memo %>
+    <%= form.label :メモ %>
     <%= form.text_area :memo, id: :entry_memo %>
   </div>
 
