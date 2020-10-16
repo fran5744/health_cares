@@ -53,3 +53,4 @@ gem 'coffee-script-source', '1.8.0'
 
 gem 'chartkick'
 
+gem 'simple_calendar', '~> 2.0'
