@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>ユーザー:</strong>
+  <strong>ユーザーID:</strong>
   <%= @entry.user_id %>
 </p>
 
@@ -87,11 +87,18 @@
 
 <p>
   <strong>体調:</strong>
-  <%= @entry.condition %>
+  <% case @entry.condition %>
+    <% when 0 then %>
+      良い
+    <% when 1 then %>
+      普通
+    <% else %>
+      悪い
+  <% end %>
 </p>
 
 <p>
-  <strong>Day:</strong>
+  <strong>日付:</strong>
   <%= @entry.day %>
 </p>
 

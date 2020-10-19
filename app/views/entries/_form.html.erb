@@ -98,7 +98,9 @@
 
   <div class="field">
     <%= form.label :体調 %>
-    <%= form.number_field :condition, id: :entry_condition %>
+    <label><%= form.radio_button :condition, 0 %> 良い </label>
+    <label><%= form.radio_button :condition, 1 %> ふつう </label>
+    <label><%= form.radio_button :condition, 2 %> 悪い </label>
   </div>
 
   <div class="field">
