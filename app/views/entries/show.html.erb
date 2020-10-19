@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>ユーザー:</strong>
+  <strong>ユーザーID:</strong>
   <%= @entry.user_id %>
 </p>
 
@@ -62,22 +62,39 @@
 
 <p>
   <strong>食事 朝:</strong>
-  <%= @entry.meal_asa %>
+  <% if (@entry.meal_asa == true) %>
+      〇
+  <% else %>
+      ✖
+  <% end %>
+
 </p>
 
 <p>
   <strong>食事 昼:</strong>
-  <%= @entry.meal_hiru %>
+  <% if (@entry.meal_hiru == true) %>
+      〇
+  <% else %>
+      ✖
+  <% end %>
 </p>
 
 <p>
   <strong>食事 晩:</strong>
-  <%= @entry.meal_ban %>
+  <% if (@entry.meal_asa == true) %>
+      〇
+  <% else %>
+      ✖
+  <% end %>
 </p>
 
 <p>
   <strong>間食:</strong>
-  <%= @entry.snack %>
+  <% if (@entry.snack == true) %>
+      〇
+  <% else %>
+      ✖
+  <% end %>
 </p>
 
 <p>
@@ -87,11 +104,18 @@
 
 <p>
   <strong>体調:</strong>
-  <%= @entry.condition %>
+  <% case @entry.condition %>
+    <% when 0 then %>
+      良い
+    <% when 1 then %>
+      普通
+    <% else %>
+      悪い
+    <% end %>
 </p>
 
 <p>
-  <strong>Day:</strong>
+  <strong>日付:</strong>
   <%= @entry.day %>
 </p>
 
