@@ -51,4 +51,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'coffee-script-source', '1.8.0'
 
+<<<<<<< HEAD
 gem 'chartkick'
+=======
+gem 'chartkick'
+
+gem 'simple_calendar', '~> 2.0'
+>>>>>>> b18fd1a2423151d245d018e9382fde42b4cd4344

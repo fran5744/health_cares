@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>ユーザー</th>
+      <th>ユーザーID</th>
       <th>体重</th>
       <th>身長</th>
       <th>運動種類</th>
@@ -21,7 +21,7 @@
       <th>昼食</th>
       <th>晩食</th>
       <th>間食</th>
-      <th>間食メモ</th>
+      <th>食べたもの</th>
       <th>体調</th>
       <th>日付</th>
       <th>メモ</th>
@@ -44,12 +44,45 @@
         <td><%= entry.ex_type_3 %></td>
         <td><%= entry.ex_time_3 %></td>
         <td><%= entry.ex_amount_3 %></td>
-        <td><%= entry.meal_asa %></td>
-        <td><%= entry.meal_hiru %></td>
-        <td><%= entry.meal_ban %></td>
-        <td><%= entry.snack %></td>
+        <td>
+          <% if (entry.meal_asa == true) %>
+              〇
+          <% else %>
+              ✖
+          <% end %>
+        </td>
+        <td>
+          <% if (entry.meal_hiru == true) %>
+              〇
+          <% else %>
+              ✖
+          <% end %>
+        </td>
+        <td>
+          <% if (entry.meal_ban == true) %>
+              〇
+          <% else %>
+              ✖
+          <% end %>
+        </td>
+        <td>
+          <% if (entry.snack == true) %>
+             〇
+          <% else %>
+             ✖
+          <% end %>
+        </td>
         <td><%= entry.snack_memo %></td>
-        <td><%= entry.condition %></td>
+        <td>
+          <% case entry.condition %>
+            <% when 0 then %>
+              良い
+            <% when 1 then %>
+              普通
+            <% else %>
+              悪い
+            <% end %>
+        </td>
         <td><%= entry.day %></td>
         <td><%= entry.memo %></td>
         <td><%= link_to '詳細', entry %></td>
