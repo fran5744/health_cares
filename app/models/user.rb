@@ -5,9 +5,9 @@ class User < ApplicationRecord
       if user_id.blank?
         errors[:base] << 'ユーザーIDは必ず入力してください。'
       end
-      if password_digest.blank?
-          errors[:base] << 'パスワードは必ず入力してください。'
-      end
+      # if password.blank?
+      #     errors[:base] << 'パスワードは必ず入力してください。'
+      # end
   
       if name.blank?
           errors[:base] << '名前は必ず入力してください。'
