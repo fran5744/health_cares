@@ -4,11 +4,12 @@
 <%= link_to '登録一覧',entries_path %>
 
 <%= link_to '設定',users_path %>
-
-<%= month_calendar do |date| %>
+  <%= month_calendar do |date| %>
     <% if date.sunday? %>
       <span style="color: red;"><%= date.day %></span>
+    <% elsif date.saturday? %>
+      <span style="color: blue;"><%= date.day %></span>
     <% else %>
       <%= date.day %>
     <% end %>
-<% end %>
+  <% end %>

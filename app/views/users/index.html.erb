@@ -18,7 +18,8 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.user_id %></td>
-        <td><%= user.ps %></td>
+        <td><%= user.password %></td>
+        <td><%= user.password_confirmation %></td>
         <td><%= user.name %></td>
         <td><%= user.authority %></td>
         <td><%= link_to '確認', user %></td>
@@ -31,4 +32,5 @@
 
 <br>
 
-<%= link_to '新規', new_user_path %>
+<%= link_to '新規登録', new_user_path %>
+<%= link_to 'ホーム', 'home/top' %>

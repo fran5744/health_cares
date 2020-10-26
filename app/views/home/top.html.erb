@@ -10,6 +10,7 @@
 <div>
   <%= link_to '設定',users_path %>
 </div>
+<%= link_to '新規登録',users_path %>
 
 <div>
   <%= link_to 'カレンダー','calendar_index' %>
@@ -19,3 +20,9 @@
   <%= line_chart @data, width: "600px", height: "300px" %>
 </div>
 </table>
+
+<% if current_user == nil %>
+  <%= link_to "ログイン", logins_login_path %>
+<% else %>
+  <%= link_to 'ログアウト', logins_login_path, :confirm => 'ログアウトしますか？', :method => :delete %>
+<% end %>
