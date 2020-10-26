@@ -119,3 +119,12 @@
   .data {
     text-align:center;
    }
+
+   .A {
+    width:180px;
+    min-height:500px;
+    height:auto;
+    background-color:#a9afaf;
+    float:right;
+    margin-top:10px;
+    }
