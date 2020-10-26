@@ -11,3 +11,9 @@
 <%= link_to 'カレンダー','calendar_index' %>
 
 <%= line_chart @data, width: "600px", height: "300px" %>
+
+<% if current_user == nil %>
+  <%= link_to "ログイン", logins_login_path %>
+<% else %>
+  <%= link_to 'ログアウト', logins_login_path, :confirm => 'ログアウトしますか？', :method => :delete %>
+<% end %>
