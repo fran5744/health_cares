@@ -15,9 +15,9 @@ class LoginsController < ApplicationController
       end
     end
   
-    def destroy
-      session[:user_id] = nil
-      @current_user = nil
-      redirect_to login_path
+    def logout
+      reset_session
+      flash[:notice] = 'ログアウトしました'
+      redirect_to action: :login
     end
 end
