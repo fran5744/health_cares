@@ -112,19 +112,30 @@
     }
   }
   
-  .channel.active {
-    background: #964c86;
-  }
-  
   .data {
     text-align:center;
    }
 
-   .A {
-    width:180px;
-    min-height:500px;
-    height:auto;
-    background-color:#a9afaf;
-    float:right;
-    margin-top:10px;
-    }
+   .container {
+    width: 1000px;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .main {
+    display: block;
+    width: 1500px;
+    margin-right: 20px;
+  }
+  .sidebar {
+    width: 250px;
+    background-color: #b9b2b7;
+  }
+  .sidebar__item {
+    margin-bottom: 20px;
+  }
+  .sidebar__item--fixed {
+    position: sticky;
+    margin-bottom: 0;
+    top: 10px;
+    z-index: 1;
+  }
