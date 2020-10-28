@@ -112,10 +112,6 @@
     }
   }
   
-  .channel.active {
-    background: #964c86;
-  }
-  
   .data {
     text-align:center;
    }
@@ -127,11 +123,12 @@
   }
   .main {
     display: block;
-    width: 660px;
+    width: 1500px;
     margin-right: 20px;
   }
   .sidebar {
-    width: 320px;
+    width: 250px;
+    background-color: #b9b2b7;
   }
   .sidebar__item {
     margin-bottom: 20px;
