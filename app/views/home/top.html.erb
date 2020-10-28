@@ -4,16 +4,28 @@
 <p>健康になろう！！</p>
 
 <div>
-  <%= link_to '登録一覧',entries_path %>
+  <%= link_to '新規登録',users_path %>
 </div>
 
 <div>
   <%= link_to '設定',users_path %>
 </div>
 
-<div class="data" style="float: left">
-  <%= line_chart @data, width: "600px", height: "300px" %>
-</div>
+<div class="container">
+<main class="main">
+  <div class="data" style="float: left">
+    <%= line_chart @data, width: "600px", height: "300px" %>
+  </div>
+</main>
+  <div class="sidebar">
+    <div class="sidebar__item">
+    <%= link_to '登録',entries_path %>
+    <br>
+    <%= link_to 'カレンダー','calendar_index' %>
+    </div>
+  </div>
+
+
 </table>
 
 <% if current_user == nil %>
@@ -21,3 +33,4 @@
 <% else %>
   <%= link_to 'ログアウト', logins_logout_path, method: :post %>
 <% end %>
+
