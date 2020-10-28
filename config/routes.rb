@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'home/calendar_index'
   get 'logins/login'
   post 'logins/login_check'
+  post 'logins/logout'
 
   resources :entries
   resources :users
