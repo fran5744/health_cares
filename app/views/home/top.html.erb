@@ -19,11 +19,20 @@
 </div>
 
 <div class="container">
-<main class="main">
-  <div class="data" style="float: left">
-    <%= line_chart @data, width: "800px", height: "400px" %>
+  <div class="sidebar_l">
+      <div class="sidebar_item">
+      <%= link_to '動画',entries_path %>
+      <br>
+      <%= link_to '器具',entries_path %>
+      <br>
+      <%= link_to '器具',entries_path %>
+      </div>
   </div>
-</main>
+  <main class="main">
+    <div class="data" style="float: left">
+      <%= line_chart @data, width: "800px", height: "400px" %>
+    </div>
+  </main>
   <div class="sidebar">
     <div class="sidebar__item">
     <%= link_to '登録',entries_path %>
@@ -31,8 +40,7 @@
     <%= link_to 'カレンダー','calendar_index' %>
     </div>
   </div>
-
-
+</div>
 </table>
 
 
