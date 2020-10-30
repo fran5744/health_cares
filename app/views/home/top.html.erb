@@ -7,6 +7,12 @@
   <%= link_to '新規登録',new_user_path %>
 </div>
 
+<% if current_user == nil %>
+  <%= link_to "ログイン", logins_login_path %>
+<% else %>
+  <%= link_to 'ログアウト', logins_logout_path, method: :post %>
+<% end %>
+
 <div>
   <%= link_to '設定',users_path %>
 </div>
@@ -24,7 +30,7 @@
 
 <main class="main">
   <div class="data" style="float: left">
-    <%= line_chart @data, width: "600px", height: "300px" %>
+    <%= line_chart @data, width: "800px", height: "400px" %>
   </div>
 </main>
 
@@ -39,9 +45,4 @@
 
 </table>
 
-<% if current_user == nil %>
-  <%= link_to "ログイン", logins_login_path %>
-<% else %>
-  <%= link_to 'ログアウト', logins_logout_path, method: :post %>
-<% end %>
 
