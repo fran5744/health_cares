@@ -19,23 +19,24 @@
    }
 
    .container {
-    width: 1000px;
+    width: 1300px;
     display: -webkit-flex;
     display: flex;
   }
   .main {
     display: block;
-    width: 1500px;
+    width: 800px;
     margin-right: 20px;
   }
   .sidebar_l {
-    width: 250px;
+    width: 200px;
     background-color: #b9b2b7;
-    margin-right: 20px;
+    margin-right: auto;
   }
   .sidebar {
-    width: 250px;
+    width: 200px;
     background-color: #b9b2b7;
+    margin-left: auto;
   }
   .sidebar__item {
     margin-bottom: 20px;
