@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     @today = Date.today
     week = ['日','月','火','水','木','金','土']
     @yobi = week[@today.wday]
-    entries = Entry.where(user_id: "s20181431")
+    entries = Entry.where(user_id: ":user_id")
 
 
     @data = []
