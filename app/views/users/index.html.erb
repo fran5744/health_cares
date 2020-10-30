@@ -1,36 +1,41 @@
 <p id="notice"><%= notice %></p>
 
 <h1>設定画面</h1>
-
-<table>
-  <thead>
-  <h3>登録一覧<h3>
-    <tr>
-      <th>ユーザーID</th>
-      <th>パスワード</th>
-      <th>名前</th>
-      <th>権限</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+<% if current_user != nil %>
+  <table>
+    <thead>
+    <h3>登録一覧<h3>
       <tr>
-        <td><%= user.user_id %></td>
-        <td><%= user.password %></td>
-        <td><%= user.password_confirmation %></td>
-        <td><%= user.name %></td>
-        <td><%= user.authority %></td>
-        <td><%= link_to '確認', user %></td>
-        <td><%= link_to '編集', edit_user_path(user) %></td>
-        <td><%= link_to '削除', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>ユーザーID</th>
+        <th>パスワード</th>
+        <th>名前</th>
+        <th>権限</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.user_id %></td>
+          <td><%= user.password %></td>
+          <td><%= user.name %></td>
+          <td><%= user.authority %></td>
+          <td><%= link_to '確認', user %></td>
+          <td><%= link_to '編集', edit_user_path(user) %></td>
+          <td><%= link_to '削除', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to '新規登録', new_user_path %>
-<%= link_to 'ホーム', 'home/top' %>
+  <br>
+
+  <%= link_to '新規登録', new_user_path %>
+
+<% else %>
+
+  <h3>ログインしてください</h3>
+  <%= link_to 'ホーム', 'home/top' %>
+
+<% end %>
