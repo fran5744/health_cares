@@ -12,11 +12,22 @@
 </div>
 
 <div class="container">
+  <div class="sidebar_l">
+  <div class="sidebar_item">
+  <%= link_to '動画',entries_path %>
+  <br>
+  <%= link_to '器具',entries_path %>
+  <br>
+  <%= link_to '器具',entries_path %>
+  </div>
+</div>
+
 <main class="main">
   <div class="data" style="float: left">
     <%= line_chart @data, width: "600px", height: "300px" %>
   </div>
 </main>
+
   <div class="sidebar">
     <div class="sidebar__item">
     <%= link_to '登録',entries_path %>
