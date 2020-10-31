@@ -7,21 +7,31 @@
 
 <div class="container">
   <div class="sidebar_l">
-  <div class="sidebar_item">
-  <%= link_to '動画',entries_path %>
-  <br>
-  <%= link_to '器具',entries_path %>
-  <br>
-  <%= link_to '器具',entries_path %>
+    <div class="sidebar_item">
+    <%= link_to '動画',entries_path %>
+    <br>
+    <%= link_to '器具',entries_path %>
+    <br>
+    <%= link_to '器具',entries_path %>
+    </div>
+  </div>
+  <main class="main">
+    <%= month_calendar do |date| %>
+      <% if date.sunday? %>
+        <span style="color: red;"><%= date.day %></span>
+      <% elsif date.saturday? %>
+       <span style="color: blue;"><%= date.day %></span>
+      <% else %>
+       <%= date.day %>
+      <% end %>
+    <% end %>
+  </main>
+  <div class="sidebar">
+    <div class="sidebar__item">
+      <%= link_to '登録',entries_path %>
+      <br>
+      <%= link_to '体重管理グラフ','top' %>
+    </div>
   </div>
 </div>
 
-  <%= month_calendar do |date| %>
-    <% if date.sunday? %>
-      <span style="color: red;"><%= date.day %></span>
-    <% elsif date.saturday? %>
-      <span style="color: blue;"><%= date.day %></span>
-    <% else %>
-      <%= date.day %>
-    <% end %>
-  <% end %>
