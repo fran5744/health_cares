@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @authority = session[:authority]
   end
 
   # GET /users/1
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @authority = session[:authority]
   end
 
   # GET /users/1/edit
