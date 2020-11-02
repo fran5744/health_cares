@@ -5,7 +5,9 @@
 <%= @user_id %><a>さんこんにちは！！</a>
 
 <div>
-  <%= link_to '新規登録',new_user_path %>
+  <% if @authority == 1 %>
+    <%= link_to '新規登録',new_user_path %>
+  <% end %>
 </div>
 
 <% if current_user == nil %>

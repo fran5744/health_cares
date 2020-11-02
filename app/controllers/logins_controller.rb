@@ -8,6 +8,7 @@ class LoginsController < ApplicationController
       # if user && user.password == params[:pass]
           # セッションのキー:user_idへユーザーのIDを登録
         session[:user_id] = user.user_id
+        session[:authority] = user.authority
         redirect_to home_top_path
       else
         # flash変数にメッセージをセット

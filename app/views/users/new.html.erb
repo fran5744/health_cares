@@ -1,15 +1,7 @@
 <h1>新規登録</h1>
 
-<% if current_user == 1 %>
-
 <%= render 'form', user: @user %>
 
 <%= link_to '戻る', users_path %>
 
-<% else %>
-
-<h3>ログインしてください</h3>
-
-<%= link_to 'ホーム', 'home/top' %>
-
-<% end %>
+<%= link_to 'ホーム', '/home/top' %>

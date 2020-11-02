@@ -5,6 +5,7 @@ class HomeController < ApplicationController
     @yobi = week[@today.wday]
     entries = Entry.where(user_id: session[:user_id])
     @user_id = session[:user_id]
+    @authority = session[:authority]
 
     @data = []
     entries.each do |entry|
