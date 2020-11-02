@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名前</strong>
+  <%= @post.body %>
+</p>
+
+<p>
+  <strong>Youtube</strong>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+<%= link_to '変更', edit_post_path(@post) %> |
+<%= link_to '戻る', posts_path %>

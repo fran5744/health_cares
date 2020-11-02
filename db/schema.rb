@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201030044940) do
+ActiveRecord::Schema.define(version: 20201102024631) do
 
   create_table "entries", force: :cascade do |t|
     t.string "user_id"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20201030044940) do
     t.integer "condition"
     t.date "day"
     t.text "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "body"
+    t.string "youtube_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

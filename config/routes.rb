@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   get 'home/top'
   get 'home/calendar_index'
   get 'home/video_index'
