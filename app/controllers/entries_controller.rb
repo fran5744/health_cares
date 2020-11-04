@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-    @entry = Entry.new
+    @entry = Entry.new(user_id: session[:user_id])
   end
 
   # GET /entries/1/edit
