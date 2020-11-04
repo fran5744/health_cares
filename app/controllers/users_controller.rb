@@ -4,8 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @user_id = session[:user_id]
     @authority = session[:authority]
+    if @authority == 1
+      @users = User.all
+    else @authority == 0
+      @users = User.where(user_id: @user_id)
+    end
   end
 
   # GET /users/1
