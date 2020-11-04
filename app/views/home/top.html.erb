@@ -17,6 +17,12 @@
 <div>
   <%= link_to '設定',users_path %>
 </div>
+<div align="center">
+  <%= link_to '月',home_top_path, period: "month" %>
+  <%= link_to '週',home_top_path, period: "week" %>
+  <%= link_to '3か月',home_top_path, period: "3month" %>
+  <%= link_to '半年',home_top_path, period: "6month" %>
+</div>
 
 <div class="container">
   <div class="sidebar_l">
