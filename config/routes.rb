@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :posts
   get 'home/top'
   get 'home/calendar_index'
-  get 'home/video_index'
   get 'logins/login'
   post 'logins/login_check'
   post 'logins/logout'
