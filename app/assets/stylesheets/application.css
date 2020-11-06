@@ -114,3 +114,16 @@
       float: none;
     }
   }
+
+  .sidenav li li {
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+  }
+  .sidenav li li a {
+    border-top: 1px solid #eee;
+  }
+  .sidenav li:hover > ul > li {
+    height: 2rem;
+    overflow: visible;
+  }

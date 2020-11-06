@@ -15,12 +15,12 @@
 
 <div class="container">
   <div class="sidebar_l">
-    <div class="sidebar_item">
-    <%= link_to '動画',posts_path %>
-    <br>
-    <%= link_to '器具',entries_path %>
-    <br>
-    <%= link_to '食べ物',entries_path %>
+    <div class="sidebar__item">
+      <ul class="sidenav">
+        <li><%= link_to '動画',posts_path %></li>
+        <li><%= link_to '器具','top' %></li>
+        <li><%= link_to '食べ物','top' %></li>
+      </ul>
     </div>
   </div>
   <main class="main">
@@ -36,9 +36,10 @@
   </main>
   <div class="sidebar">
     <div class="sidebar__item">
-      <%= link_to '登録',entries_path %>
-      <br>
-      <%= link_to '体重管理グラフ','top' %>
+      <ul class="sidenav">
+        <li><%= link_to '登録',entries_path %></li>
+        <li><%= link_to '体重管理グラフ','top' %></li>
+      </ul>
     </div>
   </div>
 </div>
