@@ -64,84 +64,53 @@
 
   .field {
     text-align:center;
-    background-color: #0fe7e7;
+    background-color: #bff5f5;
   }
 
-  * {
+
+
+
+  ul.sidenav {
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: relative;
+    overflow: auto;
   }
-  
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: rgb(253, 203, 136);
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  a {
+  ul.sidenav li a {
+    display: block;
+    color: #000000;
+    padding: 8px 16px;
     text-decoration: none;
   }
-  
-  h2 {
-    text-align: center;
-    margin: 20px auto;
-    color: #fff;
+  ul.sidenav li a:hover:not(.active) {
+    background-color: #1b2538;
+    color: white;
   }
-  
-  .accordion-menu {
-    width: 100%;
-    max-width: 350px;
-    margin: 60px auto 20px;
-    background: #fff;
-    border-radius: 4px;
+  div.content {
+    margin-left: 25%;
+    padding: 1px 16px;
+    height: 1000px;
   }
-  .accordion-menu li.open .dropdownlink {
-    color: #CDDC39;
-    .fa-chevron-down {
-      transform: rotate(180deg);
+  @media screen and (max-width: 900px) {
+    ul.sidenav {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    ul.sidenav li a {
+      float: left;
+      padding: 15px;
+    }
+    div.content {
+      margin-left: 0;
     }
   }
-  .accordion-menu li:last-child .dropdownlink {
-    border-bottom: 0;
-  }
-  .dropdownlink {
-    cursor: pointer;
-    display: block;
-    padding: 15px 15px 15px 45px;
-    font-size: 18px;
-    border-bottom: 1px solid #ccc;
-    color: #212121;
-    position: relative;
-    transition: all 0.4s ease-out;
-    i {
-      position: absolute;
-      top: 17px;
-      left: 16px;
-    }
-    .fa-chevron-down {
-      right: 12px;
-      left: auto;
-    }
-  }
-  
-  .submenuItems {
-    display: none;
-    background: #C8E6C9;
-    li {
-      border-bottom: 1px solid #B6B6B6;
-    }
-  }
-  
-  .submenuItems a {
-    display: block;
-    color: #727272;
-    padding: 12px 12px 12px 45px;
-    transition: all 0.4s ease-out;
-    &:hover {
-      background-color: #CDDC39;
-      color: #fff;
+  @media screen and (max-width: 480px) {
+    ul.sidenav li a {
+      text-align: center;
+      float: none;
     }
   }

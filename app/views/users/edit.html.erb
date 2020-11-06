@@ -2,5 +2,7 @@
 
 <%= render 'form', user: @user %>
 
-<%= link_to '確認', @user %> |
+<% if @authority == 1 %>
+  <%= link_to '確認', @user %>
+<% end %>
 <%= link_to '戻る', users_path %>
