@@ -17,9 +17,24 @@
   <div class="sidebar_l">
     <div class="sidebar__item">
       <ul class="sidenav">
-        <li><%= link_to '動画',posts_path %></li>
-        <li><%= link_to '器具','top' %></li>
-        <li><%= link_to '食べ物','top' %></li>
+        <li><%= link_to '動画',posts_path %>
+          <ul>
+            <li><a href="筋トレ">筋トレ</a></li>
+            <li><a href="ダイエット">ダイエット</a></li>
+          </ul>
+       </li>
+        <li><%= link_to '器具','top' %>
+          <ul>
+            <li><a href="筋トレ">筋トレ</a></li>
+            <li><a href="ダイエット">ダイエット</a></li>
+          </ul>
+        </li>
+        <li><%= link_to '食べ物','top' %>
+          <ul>
+            <li><a href="筋トレ">筋トレ</a></li>
+            <li><a href="ダイエット">ダイエット</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
