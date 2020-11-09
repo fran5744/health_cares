@@ -14,5 +14,6 @@ class HomeController < ApplicationController
   end
 
   def calendar_index
+    @entry = Entry.find_by(user_id: session[:user_id])
   end
 end
