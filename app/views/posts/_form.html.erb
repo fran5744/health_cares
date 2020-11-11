@@ -21,7 +21,12 @@
     <%= form.text_field :youtube_url, id: :post_youtube_url %>
   </div>
 
+  <div class="field">
+    <%= form.label :運動種類 %>
+    <%= form.select :type, [["筋トレ","筋トレ"],["ダイエット","ダイエット"]],include_blank: "選択してください" %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '送信', class: 'btn btn-primary btn-block' %>
   </div>
 <% end %>

@@ -23,6 +23,8 @@
                 <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
               <% else %>
                 <% passed_block.call day, sorted_events.fetch(day, []) %>
+                <br>
+                <a href="www.yahoo.co.jp">yahoo</a>
               <% end %>
             <% end %>
           <% end %>
@@ -30,4 +32,127 @@
       <% end %>
     </tbody>
   </table>
+  <p>
+    <strong>ユーザーID:</strong>
+    <%= @entry.user_id %>
+  </p>
+
+  <p>
+    <strong>体重:</strong>
+    <%= @entry.weight %>
+  </p>
+
+  <p>
+    <strong>身長:</strong>
+    <%= @entry.height %>
+  </p>
+
+  <p>
+    <strong>運動種類:</strong>
+    <%= @entry.ex_type_1 %>
+  </p>
+
+  <p>
+    <strong>運動時間:</strong>
+    <%= @entry.ex_time_1 %>
+  </p>
+
+  <p>
+    <strong>カロリー:</strong>
+    <%= @entry.ex_amount_1 %>
+  </p>
+
+  <p>
+    <strong>運動種類:</strong>
+    <%= @entry.ex_type_2 %>
+  </p>
+
+  <p>
+    <strong>運動時間:</strong>
+    <%= @entry.ex_time_2 %>
+  </p>
+
+  <p>
+    <strong>カロリー:</strong>
+    <%= @entry.ex_amount_2 %>
+  </p>
+
+  <p>
+    <strong>運動種類:</strong>
+    <%= @entry.ex_type_3 %>
+  </p>
+
+  <p>
+    <strong>運動時間:</strong>
+    <%= @entry.ex_time_3 %>
+  </p>
+
+  <p>
+    <strong>カロリー:</strong>
+    <%= @entry.ex_amount_3 %>
+  </p>
+
+  <p>
+    <strong>食事 朝:</strong>
+    <% if (@entry.meal_asa == true) %>
+        〇
+    <% else %>
+        ✖
+    <% end %>
+  </p>
+
+  <p>
+    <strong>食事 昼:</strong>
+    <% if (@entry.meal_hiru == true) %>
+        〇
+    <% else %>
+        ✖
+    <% end %>
+  </p>
+
+  <p>
+    <strong>食事 晩:</strong>
+    <% if (@entry.meal_asa == true) %>
+        〇
+    <% else %>
+        ✖
+    <% end %>
+  </p>
+
+  <p>
+    <strong>間食:</strong>
+    <% if (@entry.snack == true) %>
+        〇
+    <% else %>
+        ✖
+    <% end %>
+  </p>
+
+  <p>
+    <strong>食べたもの:</strong>
+    <%= @entry.snack_memo %>
+  </p>
+
+  <p>
+    <strong>体調:</strong>
+    <% case @entry.condition %>
+      <% when 0 then %>
+        良い
+      <% when 1 then %>
+        普通
+      <% else %>
+        悪い
+      <% end %>
+  </p>
+
+  <p>
+    <strong>日付:</strong>
+    <%= @entry.day %>
+  </p>
+
+  <p>
+    <strong>メモ:</strong>
+    <%= @entry.memo %>
+  </p>
+
 </div>

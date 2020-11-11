@@ -1,17 +1,4 @@
 <h1>カレンダー</h1>
-<table>
-<div>
-  <%= link_to 'ホーム','top' %>
-</div>
-
-<div>
-  <%= link_to '登録一覧',entries_path %>
-</div>
-
-<div>
-  <%= link_to '設定',users_path %>
-</div>
-</table>
 
 <div class="container">
   <div class="sidebar_l">
@@ -54,6 +41,7 @@
       <ul class="sidenav">
         <li><%= link_to '登録',entries_path %></li>
         <li><%= link_to '体重管理グラフ','top' %></li>
+        <li><%= link_to '設定',users_path %></li>
       </ul>
     </div>
   </div>

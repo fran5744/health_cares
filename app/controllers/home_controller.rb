@@ -30,8 +30,13 @@ class HomeController < ApplicationController
     entries.each do |entry|
       @data << [entry.day, entry.weight]
     end
+    @memo = []
+    entries.each do |entry|
+      @memo << [entry.day,entry.memo]
+    end
   end
 
   def calendar_index
+    @entry = Entry.find_by(user_id: session[:user_id])
   end
 end
