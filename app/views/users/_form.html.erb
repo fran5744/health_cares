@@ -23,7 +23,7 @@
     </div>
   <% end %>
 
-  <%# if @authority == 1 %>
+  <% if @authority == 1 %>
     <div class="field">
       <%= form.label 'ユーザーID' %>
       <%= form.text_field :user_id, id: :user_user_id %>
@@ -50,7 +50,7 @@
       <label><%= form.radio_button :authority, 1 %> 先生 </label>
     </div>
 
-  <%# end %>
+  <% end %>
 
   <div class="actions">
     <%= form.submit '登録' %>
