@@ -1,30 +1,47 @@
-<h1>ヘルスケア</h1>
+<body>
+<!-- Header Start -->
+<header class="site-header">
+  <div class="wrapper site-header__wrapper">
+    <a href="#" class="health_care">ヘルスケア</a>
+    <nav class="nav">
+      <button class="nav__toggle" aria-expanded="false" type="button">
+        menu
+      </button>
+      <ul class="nav__wrapper">
+        <li class="nav__item"><a href="http://localhost:3000/home/top">トップ</a></li>
+        <li class="nav__item">
+         <% if current_user == nil %>
+            <%= link_to "ログイン", logins_login_path %>
+           <% else %>
+            <%= link_to 'ログアウト', logins_logout_path, method: :post %>
+          <% end %>
+        </li>
+        
+
+        <li class="nav__item"><a href="http://localhost:3000/users">設定</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- Header End -->
+
+</body>
+
 <table>
 <%= @today %> (<%= @yobi %>)
-<p>健康になろう！！</p>
 <%= @user_id %><a>さんこんにちは！！</a>
 <%= @memo %>
 <div>
     <%= link_to '新規登録',new_user_path %>
 </div>
 
-<% if current_user == nil %>
-  <%= link_to "ログイン", logins_login_path %>
-<% else %>
-  <%= link_to 'ログアウト', logins_logout_path, method: :post %>
-<% end %>
-
-<div>
-  <%= link_to '設定',users_path %>
-</div>
-
 <nav>
 <div align="center">
 <ul>
-   <li><%= link_to '月',home_top_path, period: "month" %></li>
-   <li><%= link_to '週',home_top_path, period: "week" %></li>
-   <li><%= link_to '3カ月',home_top_path, period: "3month" %></li>
-   <li><%= link_to '6カ月',home_top_path, period: "6month" %></li>
+   <li><%= link_to '週',home_top_path(period: "week") %></li>
+   <li><%= link_to '月',home_top_path(period: "month") %></li>
+   <li><%= link_to '3カ月',home_top_path(period: "3month") %></li>
+   <li><%= link_to '6カ月',home_top_path(period: "6month") %></li>
   </ul>
 </div>
 </nav>
