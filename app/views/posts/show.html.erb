@@ -11,8 +11,12 @@
 </p>
 
 <p>
-  <strong>運動種類:</strong>
-  <%= @post.type %>
+  <strong>動画種類:</strong>
+  <% if (@post.movie_type == "1") %>
+    筋トレ動画
+  <% else %>
+    ダイエット動画
+  <% end %>
 </p>
 
 

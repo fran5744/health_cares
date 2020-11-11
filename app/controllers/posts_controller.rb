@@ -30,6 +30,7 @@ class PostsController < ApplicationController
     url = url.last(11)
     @post.youtube_url = url
 
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -73,6 +74,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:body, :youtube_url)
+      params.require(:post).permit(:body, :youtube_url, :movie_type)
     end
 end
