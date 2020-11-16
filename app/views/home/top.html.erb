@@ -12,6 +12,7 @@
         <li class="nav__item">
          <% if current_user == nil %>
             <%= link_to "ログイン", logins_login_path %>
+            <%= link_to '新規登録',new_user_path %>
            <% else %>
             <%= link_to 'ログアウト', logins_logout_path, method: :post %>
           <% end %>
