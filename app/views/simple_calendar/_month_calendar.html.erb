@@ -15,20 +15,20 @@
     </thead>
 
     <tbody>
-      <% date_range.each_slice(7) do |week| %>
-        <tr>
-          <% week.each do |day| %>
-            <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
-                <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
-              <% else %>
-                <% passed_block.call day, sorted_events.fetch(day, []) %>
-                <br>
-                <a href="www.yahoo.co.jp">yahoo</a>
+      <%= form_tag({controller: "home", action: "calendar_index" }, {method: "get"}) do %>
+        <% date_range.each_slice(7) do |week| %>
+          <tr>
+            <% week.each do |day| %>
+              <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
+                  <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
+                <% else %>
+                  <button style="border: none;" name = '<%= day %>'><% passed_block.call day, sorted_events.fetch(day, []) %></button><br>
+                <% end %>
               <% end %>
             <% end %>
-          <% end %>
-        </tr>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
@@ -156,3 +156,9 @@
   </p>
 
 </div>
+
+<script>
+document.getElementById("text-button").onclick = function() {
+  document.getElementById("text").innerHTML = "クリックされた！";
+};
+</script>

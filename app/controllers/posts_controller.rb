@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where(movie_type: params[:m_type])
   end
 
   # GET /posts/1
@@ -29,6 +29,7 @@ class PostsController < ApplicationController
     url = params[:post][:youtube_url]
     url = url.last(11)
     @post.youtube_url = url
+
 
     respond_to do |format|
       if @post.save
@@ -73,6 +74,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:body, :youtube_url)
+      params.require(:post).permit(:body, :youtube_url, :movie_type)
     end
 end
