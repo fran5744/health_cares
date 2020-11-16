@@ -24,7 +24,7 @@
               <% else %>
                 <% passed_block.call day, sorted_events.fetch(day, []) %>
                 <br>
-                <a href="//www.yahoo.co.jp">yahoo</a>
+                <div id="text-button"><p id="text">詳細</p></div>
               <% end %>
             <% end %>
           <% end %>
@@ -156,3 +156,9 @@
   </p>
 
 </div>
+
+<script>
+document.getElementById("text-button").onclick = function() {
+  document.getElementById("text").innerHTML = "クリックされた！";
+};
+</script>
