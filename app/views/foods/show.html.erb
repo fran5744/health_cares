@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>食材名:</strong>
+  <%= @food.f_name %>
+</p>
+
+<p>
+  <strong>画像:</strong>
+  <% if @food.f_filename.present? %>
+    <br>
+    <%= image_tag @food.f_filename, size: '200x200' %>
+  <% end %>
+</p>
+
+<p>
+  <strong>説明:</strong>
+  <%= @food.legend %>
+</p>
+
+<p>
+  <strong>動画種類:</strong>
+  <% if (@food.f_type == "1") %>
+    筋トレ食
+  <% else %>
+    ダイエット食
+  <% end %>
+</p>
+
+
+<%= link_to '変更', edit_food_path(@food) %> |
+<%= link_to '戻る', foods_path %>

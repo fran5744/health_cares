@@ -1,0 +1,38 @@
+<%= form_with(model: food, local: true) do |form| %>
+  <% if food.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+      <% food.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :食材名 %>
+    <%= form.text_field :f_name, id: :food_f_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :画像 %>
+    <%= form.file_field :f_filename, id: :food_f_filename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :説明 %>
+    <%= form.text_area :legend, id: :food_legend %>
+  </div>
+
+  <div class="field">
+    <%= form.label :食べ物種類 %>
+    <%= form.select :f_type,[["筋トレ","1"],["ダイエット","2"]],include_blank: "選択してください" %>
+ </div>
+
+
+  <div class="actions">
+    <%= form.submit '新規登録', class: 'btn btn-primary btn-block' %>
+  </div>
+<% end %>
