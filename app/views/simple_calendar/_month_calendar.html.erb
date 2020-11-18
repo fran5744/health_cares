@@ -15,6 +15,7 @@
     </thead>
 
     <tbody>
+    <div id="updated_by_ajax" >
       <%= form_tag({controller: "home", action: "calendar_index" }, {method: "get"}) do %>
         <% date_range.each_slice(7) do |week| %>
           <tr>
@@ -29,9 +30,11 @@
             <% end %>
           </tr>
         <% end %>
+        </div>
       <% end %>
     </tbody>
   </table>
+  <div id="updated_by_ajax" >
   <p>
     <strong>ユーザーID:</strong>
     <%= @entry.user_id %>
@@ -156,9 +159,4 @@
   </p>
 
 </div>
-
-<script>
-document.getElementById("text-button").onclick = function() {
-  document.getElementById("text").innerHTML = "クリックされた！";
-};
-</script>
+</div>
