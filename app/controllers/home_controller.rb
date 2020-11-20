@@ -53,6 +53,12 @@ class HomeController < ApplicationController
 
   def calendar_index
     @entry = Entry.find_by(user_id: session[:user_id])
+
+    def update
+      post_text = params[:data][:text]
+      results = { :message => post_text }
+      render partial: 'ajax_partial', locals: { :results => results }
+    end
   end
 end
 
