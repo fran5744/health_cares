@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   post 'logins/login_check'
   post 'logins/logout'
 
-  root  to: 'ajax_test#top'
-  post  'ajax_test/update', to: 'ajax_test#update', as: 'ajax_test_update'
+  post  'home/update', to: 'home#update', as: 'home_update'
 
   resources :entries
   resources :users
