@@ -1,6 +1,6 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
+      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
     <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
   </div>
@@ -15,8 +15,7 @@
     </thead>
 
     <tbody>
-    <div id="updated_by_ajax" >
-      <%= form_tag({controller: "home", action: "update" }, {method: "post", remote: true}) do %>
+    <div id="request_ajax_update" >
         <% date_range.each_slice(7) do |week| %>
           <tr>
             <% week.each do |day| %>
@@ -24,12 +23,13 @@
                 <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
                   <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
                 <% else %>
-                  <button style="border: none;" name =  "calendar_day" value = '<%= day %>'><%= hidden_field_tag :calendar_day, day %><% passed_block.call day, sorted_events.fetch(day, []) %></button><br>
+                  <%= form_tag({controller: "home", action: "update" }, {method: "post", remote: true}) do %>
+                    <button name="calendar_day" value='<%= day %>' style="border: none;" ><% passed_block.call day, sorted_events.fetch(day, []) %></button><br>
+                  <% end %>
                 <% end %>
               <% end %>
             <% end %>
           </tr>
-        <% end %>
       <% end %>
     </div>
     </tbody>
