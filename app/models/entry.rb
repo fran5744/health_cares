@@ -10,7 +10,8 @@ class Entry < ApplicationRecord
       if height.blank?
         errors[:base] << '身長は必ず入力してください。'
       end
-
     end
+
+    validates :day, :user_id, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
   
 end

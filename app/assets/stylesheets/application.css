@@ -213,3 +213,6 @@
 
   }
 
+  .table{
+    display: flex;
+  }
