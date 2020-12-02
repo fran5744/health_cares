@@ -1,7 +1,12 @@
 <body>
+
+
 <!-- Header Start -->
 <header class="site-header">
-  <div class="wrapper site-header__wrapper">
+   <div class="image-iikanji-relative">
+    <img src="header.jpg" alt="">
+   </div>
+   <div class="wrapper site-header__wrapper">
     <a href="#" class="health_care">ヘルスケア</a>
     <nav class="nav">
       <button class="nav__toggle" aria-expanded="false" type="button">
@@ -11,9 +16,9 @@
         <li class="nav__item"><a href="http://localhost:3000/home/top">トップ</a></li>
         <li class="nav__item">
          <% if current_user == nil %>
-            <%= link_to "ログイン", logins_login_path %>
-            <%= link_to '新規登録',new_user_path %>
-           <% else %>
+             <%= link_to "ログイン", logins_login_path %>
+             <%= link_to '新規登録',new_user_path %>
+            <% else %>
             <%= link_to 'ログアウト', logins_logout_path, method: :post %>
           <% end %>
         </li>
@@ -23,22 +28,17 @@
       </ul>
     </nav>
   </div>
+
 </header>
 <!-- Header End -->
-
-</body>
-
 <table>
 <%= @today %> (<%= @yobi %>)
 <%= @user_id %><a>さんこんにちは！！</a>
 <%= @memo %>
-<div>
-    <%= link_to '新規登録',new_user_path %>
-</div>
 
 <nav>
-<div align="center">
-<ul>
+<div class="period">
+  <ul>
    <li><%= link_to '週',home_top_path(period: "week") %></li>
    <li><%= link_to '月',home_top_path(period: "month") %></li>
    <li><%= link_to '3カ月',home_top_path(period: "3month") %></li>
@@ -46,6 +46,7 @@
   </ul>
 </div>
 </nav>
+
 
 <div class="container">
   <div class="sidebar_l">
@@ -74,7 +75,7 @@
   </div>
   <main class="main">
     <div class="data" style="float: left">
-      <%= line_chart @data, width: "800px", height: "400px" %>
+      <%= line_chart @data, width: "800px", height: "500px" %>
     </div>
   </main>
   <div class="sidebar">
@@ -88,6 +89,11 @@
   </div>
 </div>
 </table>
+
+</body>
+
+
+
 
 
 
