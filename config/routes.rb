@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post 'logins/login_check'
   post 'logins/logout'
 
+  post  'home/update', to: 'home#update', as: 'home_update'
+
   resources :entries
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

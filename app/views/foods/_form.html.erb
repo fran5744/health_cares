@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="food-name">
     <%= form.label :食材名 %>
     <%= form.text_field :f_name, id: :food_f_name %>
   </div>
 
-  <div class="field">
+  <div class="food-photo">
     <%= form.label :画像 %>
     <%= form.file_field :f_filename, id: :food_f_filename %>
   </div>
 
-  <div class="field">
+  <div class="food-legend">
     <%= form.label :説明 %>
     <%= form.text_area :legend, id: :food_legend %>
   </div>
 
-  <div class="field">
+  <div class="food-type">
     <%= form.label :食べ物種類 %>
     <%= form.select :f_type,[["筋トレ","1"],["ダイエット","2"]],include_blank: "選択してください" %>
  </div>

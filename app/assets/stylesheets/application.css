@@ -194,6 +194,7 @@
     };
   }
 
+<<<<<<< HEAD
   body {
     background-image:url("assets/images/header.jpg)");
     background-size:  cover;
@@ -596,4 +597,39 @@
   }
   .LinkedIn:hover {
     color: white;
+=======
+
+
+  .food-name {
+    
+  }
+
+  .food-photo {
+
+  }
+
+  .food-legend {
+
+  }
+
+  .food-type {
+
+  }
+
+<<<<<<< HEAD
+  table{
+    width: 50%;
+  }
+  
+  th{
+    width: 20%;
+  }
+  
+  td{
+    width: 30%;
+=======
+  .previous {
+    text-decoration: none;
+>>>>>>> 28a9f7c94ae935f8e586b15cb6f1d02640d9c7a4
+>>>>>>> 0999c8c3e728e270d2ffe44c1e47c3fadfdfc78b
   }

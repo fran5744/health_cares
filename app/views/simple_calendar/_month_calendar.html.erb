@@ -1,6 +1,6 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
+      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
     <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
   </div>
@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-      <%= form_tag({controller: "home", action: "calendar_index" }, {method: "get"}) do %>
+    <div id="request_ajax_update" >
         <% date_range.each_slice(7) do |week| %>
           <tr>
             <% week.each do |day| %>
@@ -23,142 +23,18 @@
                 <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
                   <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
                 <% else %>
-                  <button style="border: none;" name = '<%= day %>'><% passed_block.call day, sorted_events.fetch(day, []) %></button><br>
+                  <%= form_tag({controller: "home", action: "update" }, {method: "post", remote: true}) do %>
+                    <button name="calendar_day" value='<%= day %>' style="border: none;" ><% passed_block.call day, sorted_events.fetch(day, []) %></button><br>
+                  <% end %>
                 <% end %>
               <% end %>
             <% end %>
           </tr>
-        <% end %>
       <% end %>
+    </div>
     </tbody>
   </table>
-  <p>
-    <strong>ユーザーID:</strong>
-    <%= @entry.user_id %>
-  </p>
-
-  <p>
-    <strong>体重:</strong>
-    <%= @entry.weight %>
-  </p>
-
-  <p>
-    <strong>身長:</strong>
-    <%= @entry.height %>
-  </p>
-
-  <p>
-    <strong>運動種類:</strong>
-    <%= @entry.ex_type_1 %>
-  </p>
-
-  <p>
-    <strong>運動時間:</strong>
-    <%= @entry.ex_time_1 %>
-  </p>
-
-  <p>
-    <strong>カロリー:</strong>
-    <%= @entry.ex_amount_1 %>
-  </p>
-
-  <p>
-    <strong>運動種類:</strong>
-    <%= @entry.ex_type_2 %>
-  </p>
-
-  <p>
-    <strong>運動時間:</strong>
-    <%= @entry.ex_time_2 %>
-  </p>
-
-  <p>
-    <strong>カロリー:</strong>
-    <%= @entry.ex_amount_2 %>
-  </p>
-
-  <p>
-    <strong>運動種類:</strong>
-    <%= @entry.ex_type_3 %>
-  </p>
-
-  <p>
-    <strong>運動時間:</strong>
-    <%= @entry.ex_time_3 %>
-  </p>
-
-  <p>
-    <strong>カロリー:</strong>
-    <%= @entry.ex_amount_3 %>
-  </p>
-
-  <p>
-    <strong>食事 朝:</strong>
-    <% if (@entry.meal_asa == true) %>
-        〇
-    <% else %>
-        ✖
-    <% end %>
-  </p>
-
-  <p>
-    <strong>食事 昼:</strong>
-    <% if (@entry.meal_hiru == true) %>
-        〇
-    <% else %>
-        ✖
-    <% end %>
-  </p>
-
-  <p>
-    <strong>食事 晩:</strong>
-    <% if (@entry.meal_asa == true) %>
-        〇
-    <% else %>
-        ✖
-    <% end %>
-  </p>
-
-  <p>
-    <strong>間食:</strong>
-    <% if (@entry.snack == true) %>
-        〇
-    <% else %>
-        ✖
-    <% end %>
-  </p>
-
-  <p>
-    <strong>食べたもの:</strong>
-    <%= @entry.snack_memo %>
-  </p>
-
-  <p>
-    <strong>体調:</strong>
-    <% case @entry.condition %>
-      <% when 0 then %>
-        良い
-      <% when 1 then %>
-        普通
-      <% else %>
-        悪い
-      <% end %>
-  </p>
-
-  <p>
-    <strong>日付:</strong>
-    <%= @entry.day %>
-  </p>
-
-  <p>
-    <strong>メモ:</strong>
-    <%= @entry.memo %>
-  </p>
-
+  <div id="updated_by_ajax" >
+  デフォルト
+  </div>
 </div>
-
-<script>
-document.getElementById("text-button").onclick = function() {
-  document.getElementById("text").innerHTML = "クリックされた！";
-};
-</script>
