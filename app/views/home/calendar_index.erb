@@ -47,3 +47,11 @@
   </div>
 </div>
 
+<div id="updated_by_ajax" >
+  <%= @entry.inspect %>
+  <% if @entry %>
+    ユーザーID：<%= @entry.user_id %><br>
+    体重      :<%= @entry.weight %>
+  <% end %>
+</div>
+<%= @test %>
