@@ -1,7 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-nav{
+    nav{
     text-align: center;
     }
     nav ul{
@@ -35,7 +35,7 @@ nav{
       
       .site-header {
         position: relative;
-        background-color: #def7ff; }
+         }
        
       .site-header__wrapper {
         padding-top: 1rem;
@@ -58,7 +58,6 @@ nav{
           right: 0;
           left: 0;
           z-index: -1;
-          background-color: #d9f0f7;
           visibility: hidden;
           opacity: 0;
           transform: translateY(-100%);
@@ -71,12 +70,25 @@ nav{
       .nav__item a {
         display: block;
         padding: 1.5rem 0.5rem; }
-       
-      .nav__toggle {
-        display: none; }
-        @media (max-width: 599px) {
-          .nav__toggle {
-            display: block;
-            position: absolute;
-            right: 1rem;
-            top: 1rem; } }
+        
+.login{
+ text-align: center
+}
+
+.login_form{
+  text-align: center
+ }
+
+ .period{
+    font-size: 18px;
+    display: inline-block;
+    padding: 0.5em 1em 0.3em;
+    color: #ffffff;
+    border-radius: 25px;
+    background-color: #D7EEFF;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+      

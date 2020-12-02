@@ -19,20 +19,27 @@ class HomeController < ApplicationController
       now_month = Date.today.all_month
       begin_month = Date.today.beginning_of_month
       end_month = Date.today.end_of_month
-      entries = entries.where('day <= ?', "#{begin_month}")
-      entries = entries.where('day >= ?', "#{end_month}")
+      entries = entries.where('day >= ?', "#{begin_month}")
+      entries = entries.where('day <= ?', "#{end_month}")
       now_month.each do |day|
         period_h.store(day.strftime('%Y-%m-%d'), "")
       end
     when "3month" then
-      entries = entries.where('day <= ?', "2020-10-31")
-      entries = entries.where('day >= ?', "2020-07-01")
+      now_threemonth = Date.today.beginning_of_month.prev_month(3)
+      end_month = Date.today.end_of_month
+      entries = entries.where('day >= ?', "#{now_threemonth}")
+      entries = entries.where('day <= ?', "#{end_month}")
+      (now_threemonth..end_month).each do |day|
+        period_h.store(day.strftime('%Y-%m-%d'), "")
+      end
     when "6month" then
-      entries = entries.where('day <= ?', "2020-10-31")
-      entries = entries.where('day >= ?', "2020-05-01")
-    else
-      entries = entries.where('day <= ?', "2020-10-31")
-      entries = entries.where('day >= ?', "2020-10-25")
+      now_sixmonth = Date.today.beginning_of_month.prev_month(6)
+      end_month = Date.today.end_of_month
+      entries = entries.where('day >= ?', "#{now_sixmonth}")
+      entries = entries.where('day <= ?', "#{end_month}")
+      (now_sixmonth..end_month).each do |day|
+        period_h.store(day.strftime('%Y-%m-%d'), "")
+      end
     end
     @user_id = session[:user_id]
     @authority = session[:authority]
@@ -49,6 +56,8 @@ class HomeController < ApplicationController
     entries.each do |entry|
       @memo << [entry.day,entry.memo]
     end
+    logger.debug("===============")
+    logger.debug(@data)
   end
 
   def calendar_index

@@ -1,9 +1,41 @@
-<h1>ログイン画面</h1>
+<section class="w">
+  <div class="w-head">
+    <i class="w-eye"></i>
+    <i class="w-eye w-eye_right"></i>
+  </div>
+  <div class="w-arm"></div>
+  <div class="w-arm w-arm_right"></div>
+  <div class="w-leg">
+    <div class="w-leg-top"></div>
+    <div class="w-leg-bottom">
+      <div class="w-heel"></div>
+      <div class="w-shoelace"></div>
+      <div class="w-shoelace"></div>
+    </div>
+  </div>
+  <div class="w-leg w-leg_right">
+    <div class="w-leg-top"></div>
+    <div class="w-leg-bottom">
+      <div class="w-heel"></div>
+      <div class="w-shoelace"></div>
+      <div class="w-shoelace"></div>
+    </div>
+  </div>
+  <div class="w-body">
+    <div class="w-body-skin"></div>
+    <div class="w-body-nipples"></div>
+  </div>
+</section>
+<a href="https://linkedin.com/in/drfisher" class="LinkedIn">Pavel Rybin</a>
 
-<h3><font color="red"><%= flash[:alert]  %></font><h3>
 
-<%= form_tag logins_login_check_path do %>
-<table id="login_form">
+<div class = "login">
+ <h1>ログイン画面</h1>
+
+ <h3><font color="red"><%= flash[:alert]  %></font><h3>
+
+ <%= form_tag logins_login_check_path do %>
+ <table id="login_form">
    <tr>
     <td><%= label_tag :name, 'ユーザー名' %></td>
      <td><%= text_field_tag :user_id, params[:user_id] %></td>
@@ -17,5 +49,6 @@
    <tr>
    <td><%= submit_tag "ログイン" %></td>
    </tr>
-</table>
+  </table>
+</div>
 <% end %>
