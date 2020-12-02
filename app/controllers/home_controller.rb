@@ -49,6 +49,9 @@ class HomeController < ApplicationController
     entries.each do |entry|
       @memo << [entry.day,entry.memo]
     end
+
+    @entry_day = Entry.find_by(user_id: @user_id, day: @today)
+
   end
 
   def calendar_index
