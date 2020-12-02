@@ -213,6 +213,14 @@
 
   }
 
-  .table{
-    display: flex;
+  table{
+    width: 50%;
+  }
+  
+  th{
+    width: 20%;
+  }
+  
+  td{
+    width: 30%;
   }
