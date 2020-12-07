@@ -24,6 +24,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
+    params[:entry][:day] = params[:day]
     @entry = Entry.new(entry_params)
 
     respond_to do |format|
@@ -40,6 +41,7 @@ class EntriesController < ApplicationController
   # PATCH/PUT /entries/1
   # PATCH/PUT /entries/1.json
   def update
+    params[:entry][:day] = params[:day]
     respond_to do |format|
       if @entry.update(entry_params)
         format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
@@ -59,6 +61,9 @@ class EntriesController < ApplicationController
       format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def serect_date_entry
   end
 
   private

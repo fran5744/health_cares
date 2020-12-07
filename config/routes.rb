@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'logins/login'
   post 'logins/login_check'
   post 'logins/logout'
+  get 'entries/serect_date_entry'
+
   
 
   post  'home/update', to: 'home#update', as: 'home_update'
