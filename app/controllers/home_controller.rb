@@ -56,14 +56,12 @@ class HomeController < ApplicationController
     entries.each do |entry|
       @memo << [entry.day,entry.memo]
     end
-<<<<<<< HEAD
 
     @entry_day = Entry.find_by(user_id: @user_id, day: @today)
 
-=======
+
     logger.debug("===============")
     logger.debug(@data)
->>>>>>> 1f78bf48aae99a54754660544d0d8139649c8795
   end
 
   def calendar_index
