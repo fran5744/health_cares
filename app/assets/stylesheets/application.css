@@ -595,6 +595,7 @@
   }
   .LinkedIn:hover {
     color: white;
+  }
 
   .food-name {
     
@@ -624,6 +625,6 @@
     width: 30%;
   }
   
-  .previous {
-    text-decoration: none;
+  .memo_entry {
+    list-style: none;
   }

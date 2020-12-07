@@ -47,11 +47,57 @@
   </div>
 </div>
 
-<div id="updated_by_ajax" >
-  <%= @entry.inspect %>
+<div>
   <% if @entry %>
-    ユーザーID：<%= @entry.user_id %><br>
-    体重      :<%= @entry.weight %>
+    <ul class="memo_entry">
+      <li>日付      :<%= @entry.day %></li>
+      <li>体重      :<%= @entry.weight %></li>
+      <li>身長      :<%= @entry.height %></li>
+      <li>運動種類  :<%= @entry.ex_type_1 %></li>
+      <li>運動時間  :<%= @entry.ex_time_1 %></li>
+      <li>カロリー  :<%= @entry.ex_amount_1 %></li>
+      <li>運動種類  :<%= @entry.ex_type_2 %></li>
+      <li>運動時間  :<%= @entry.ex_time_2 %></li>
+      <li>カロリー  :<%= @entry.ex_amount_2 %></li>
+      <li>運動種類  :<%= @entry.ex_type_3 %></li>
+      <li>運動時間  :<%= @entry.ex_time_3 %></li>
+      <li>カロリー  :<%= @entry.ex_amount_3 %></li>
+      <li>食事 朝   :<% if (@entry.meal_asa == true) %>
+                        〇
+                    <% else %>
+                        ✖
+                    <% end %>
+      </li>
+      <li>食事 昼   :<% if (@entry.meal_hiru == true) %>
+                        〇
+                    <% else %>
+                        ✖
+                    <% end %>
+      </li>
+      <li>食事 晩   :<% if (@entry.meal_asa == true) %>
+                        〇
+                    <% else %>
+                        ✖
+                    <% end %>
+      </li>
+      <li>間食      :<% if (@entry.snack == true) %>
+                        〇
+                    <% else %>
+                        ✖
+                    <% end %>
+      </li>
+      <li>食べたもの :<%= @entry.snack_memo %></li>
+      <li>体調      :
+        <% case @entry.condition %>
+          <% when 0 then %>
+            良い
+          <% when 1 then %>
+            普通
+          <% else %>
+            悪い
+        <% end %>
+      </li>
+      <li>メモ      :<%= @entry.memo %></li>
+    </ul>
   <% end %>
 </div>
-<%= @test %>
