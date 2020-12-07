@@ -56,19 +56,33 @@ class HomeController < ApplicationController
     entries.each do |entry|
       @memo << [entry.day,entry.memo]
     end
+
+    @entry_day = Entry.find_by(user_id: @user_id, day: @today)
+
+
     logger.debug("===============")
     logger.debug(@data)
   end
 
   def calendar_index
-    @entry = Entry.find_by(user_id: session[:user_id])
+    calendar_day = params[:calendar_day]
+    if calendar_day
+      @entry = Entry.find_by(user_id: session[:user_id], day: calendar_day.to_date)
+    else
+      @entry = nil
+    end
+    logger.debug("================")
+    logger.debug(@entry.inspect)
+    @test = "TEST"
+
   end
 
   def update
     calendar_day = params[:calendar_day]
     entry = Entry.find_by(user_id: session[:user_id] , day: calendar_day.to_date)
     results = { :message => entry }
-    render partial: 'ajax_partial', locals: { :results => results }
+    #render partial: 'ajax_partial', locals: { :results => results }
+    redirect_to home_calendar_index_path(calendar_day: params[:calendar_day])
   end
 end
 

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'logins/login'
   post 'logins/login_check'
   post 'logins/logout'
+  
 
   post  'home/update', to: 'home#update', as: 'home_update'
 
