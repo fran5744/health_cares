@@ -36,6 +36,8 @@
 <%= @today %> (<%= @yobi %>)
 <%= @user_id %><a>さんこんにちは！！</a>
 <%= @memo %>
+<br>
+<%= @entry_day %>
 <div>
     <%= link_to '新規登録',new_user_path %>
 </div>
@@ -84,8 +86,8 @@
   <div class="sidebar">
     <div class="sidebar__item">
       <ul class="sidenav">
-        <li><%= link_to '登録',entries_path %></li>
-        <li><%= link_to '変更','entries/@entry_day/edit' %></li>
+        <li><%= link_to '登録',new_entry_path %></li>
+        <li><%= link_to '変更' ,entries_path %></li>
         <li><a href='calendar_index'>カレンダー</a></li>
       </ul>
     </div>
