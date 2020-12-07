@@ -34,6 +34,7 @@
 
  <h3><font color="red"><%= flash[:alert]  %></font><h3>
 
+ <center>
  <%= form_tag logins_login_check_path do %>
  <table id="login_form">
    <tr>
@@ -49,6 +50,8 @@
    <tr>
    <td><%= submit_tag "ログイン" %></td>
    </tr>
+
   </table>
+  </center>
 </div>
 <% end %>

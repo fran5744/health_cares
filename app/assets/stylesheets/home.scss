@@ -1,76 +1,90 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-    nav{
+    header{
+    z-index: 10;
+    height: 64px;
+    position: absolute;
+    top: 0px;
+    background-color: #D7EEFF;
+    width: 100%;
     text-align: center;
+    z-index: 2;
+    box-shadow: 0px 0px 10px 0px rgba(72, 133, 245, 0.25);
     }
-    nav ul{
-    margin: 0 ;
-    padding: 0 ;
-    }
-    nav li{
-    list-style: none;
-    display: inline-block;
-    width: 10%;
-    min-width: 90px;
-    }
-    nav li:not(:last-child){
-    border-right:2px solid #ddd;
-    }
-    nav a{
-    text-decoration: none;
-    color: #333;
-    }
-    nav a.current{
-    color: #00B0F0;
-    border-bottom:2px solid #00B0F0;
-    }
-    nav a:hover{
-    color:#F7CB4D;
-    border-bottom:2px solid #F7CB4D;
-    }
-    .health_care {
-         font-weight: bold;
-        font-size: 20px; }
-      
-      .site-header {
-        position: relative;
-         }
-       
-      .site-header__wrapper {
-        padding-top: 1rem;
-        padding-bottom: 1rem; }
-        @media (min-width: 600px) {
-          .site-header__wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 0;
-            padding-bottom: 0; } }
-      @media (min-width: 600px) {
-        .nav__wrapper {
-          display: flex; } }
-       
-      @media (max-width: 599px) {
-        .nav__wrapper {
-          position: absolute;
-          top: 100%;
-          right: 0;
-          left: 0;
-          z-index: -1;
-          visibility: hidden;
-          opacity: 0;
-          transform: translateY(-100%);
-          transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
-          .nav__wrapper.active {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(0); } }
-       
-      .nav__item a {
-        display: block;
-        padding: 1.5rem 0.5rem; }
-        
+
+    nav{
+      text-align: center;
+      }
+      nav ul{
+      margin: 0 ;
+      padding: 0 ;
+      }
+      nav li{
+      list-style: none;
+      display: inline-block;
+      width: 10%;
+      min-width: 90px;
+      }
+      nav li:not(:last-child){
+        border-right:2px solid #ddd;
+        }
+        nav a{
+        text-decoration: none;
+        color: #333;
+        }
+        nav a.current{
+          color: #00B0F0;
+          border-bottom:2px solid #00B0F0;
+          }
+          nav a:hover{
+          color:#F7CB4D;
+          border-bottom:2px solid #F7CB4D;
+          }
+          .health_care {
+            font-weight: bold;
+           font-size: 20px; }
+         
+         .site-header {
+           position: relative;
+            }
+          
+         .site-header__wrapper {
+           padding-top: 1rem;
+           padding-bottom: 1rem; }
+           @media (min-width: 600px) {
+             .site-header__wrapper {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               padding-top: 0;
+               padding-bottom: 0; } }
+         @media (min-width: 600px) {
+           .nav__wrapper {
+             display: flex; } }
+          
+         @media (max-width: 599px) {
+           .nav__wrapper {
+             position: absolute;
+             top: 100%;
+             right: 0;
+             left: 0;
+             z-index: -1;
+             visibility: hidden;
+             opacity: 0;
+             transform: translateY(-100%);
+             transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
+             .nav__wrapper.active {
+               visibility: visible;
+               opacity: 1;
+               transform: translateY(0); } }
+          
+         .nav__item a {
+           display: block;
+           padding: 1.5rem 0.5rem; 
+          }
+
+          
 .login{
  text-align: center
 }
@@ -91,4 +105,3 @@
     margin-right: 20px;
   }
 
-      
