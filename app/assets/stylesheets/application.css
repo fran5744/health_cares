@@ -131,8 +131,6 @@
     font-size: 40px;
   }
 
-
-
   #awan {
   position:fixed;
   top:0px;left:0px;
@@ -596,7 +594,6 @@
   .LinkedIn:hover {
     color: white;
   }
-
   .food-name {
     
   }
@@ -627,4 +624,7 @@
   
   .memo_entry {
     list-style: none;
+  }
+  .previous {
+    text-decoration: none;
   }
