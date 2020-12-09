@@ -131,12 +131,6 @@
     font-size: 40px;
   }
 
-<<<<<<< HEAD
-=======
-
-=======
-
-
   #awan {
   position:fixed;
   top:0px;left:0px;
@@ -599,8 +593,7 @@
   }
   .LinkedIn:hover {
     color: white;
->>>>>>> 084e1d1f88f8e7650a96a8a90139bbf39c74ea2f
-
+  }
   .food-name {
     
   }
@@ -627,14 +620,11 @@
   
   td{
     width: 30%;
-<<<<<<< HEAD
-  .previous {
-    text-decoration: none;
->>>>>>> 0999c8c3e728e270d2ffe44c1e47c3fadfdfc78b
-=======
   }
   
+  .memo_entry {
+    list-style: none;
+  }
   .previous {
     text-decoration: none;
->>>>>>> 084e1d1f88f8e7650a96a8a90139bbf39c74ea2f
   }
