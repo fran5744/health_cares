@@ -161,7 +161,9 @@
   
   .memo_entry {
     list-style: none;
+    text-align: center;
   }
+<<<<<<< HEAD
   .previous {
     text-decoration: none;
   }
@@ -171,3 +173,14 @@
   }
 
 
+=======
+
+  .table-striped th {
+    width: 10%;
+    text-align: center;
+  }
+
+  .calendar-heading {
+    text-align: center;
+  }
+>>>>>>> e8db5cc3ce2df6cccb984cbbc7a4410c104f6b72
