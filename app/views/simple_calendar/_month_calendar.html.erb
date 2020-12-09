@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-    <div id="request_ajax_update" >
+    <div>
         <% date_range.each_slice(7) do |week| %>
           <tr>
             <% week.each do |day| %>
@@ -23,7 +23,7 @@
                 <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
                   <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
                 <% else %>
-                  <%= form_tag({controller: "home", action: "update" }, {method: "post", remote: true}) do %>
+                  <%= form_tag({controller: "home", action: "update" }, {method: "post"}) do %>
                     <button name="calendar_day" value='<%= day %>' style="border: none;" ><% passed_block.call day, sorted_events.fetch(day, []) %></button><br>
                   <% end %>
                 <% end %>

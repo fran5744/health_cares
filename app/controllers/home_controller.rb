@@ -53,9 +53,6 @@ class HomeController < ApplicationController
 
     @entry_day = Entry.find_by(user_id: @user_id, day: @today)
 
-
-    logger.debug("===============")
-    logger.debug(@data)
   end
 
   def calendar_index
@@ -65,10 +62,6 @@ class HomeController < ApplicationController
     else
       @entry = nil
     end
-    logger.debug("================")
-    logger.debug(@entry.inspect)
-    @test = "TEST"
-
   end
 
   def update
