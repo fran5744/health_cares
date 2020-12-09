@@ -50,12 +50,6 @@ class HomeController < ApplicationController
       period_h[entry.day.strftime('%Y-%m-%d')] = entry.weight
     end
 
-    # ハッシュを配列に変換
-    @data = period_h.to_a
-    @memo = []
-    entries.each do |entry|
-      @memo << [entry.day,entry.memo]
-    end
 
     @entry_day = Entry.find_by(user_id: @user_id, day: @today)
 
