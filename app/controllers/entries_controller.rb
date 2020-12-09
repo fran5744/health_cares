@@ -26,6 +26,7 @@ class EntriesController < ApplicationController
   def create
     params[:entry][:day] = params[:day]
     @entry = Entry.new(entry_params)
+    params[:entry][:ex_amount_1] = params[:ex_type_1] * params[:ex_time_1]
 
     respond_to do |format|
       if @entry.save
@@ -42,6 +43,7 @@ class EntriesController < ApplicationController
   # PATCH/PUT /entries/1.json
   def update
     params[:entry][:day] = params[:day]
+
     respond_to do |format|
       if @entry.update(entry_params)
         format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
