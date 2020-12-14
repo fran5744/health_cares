@@ -46,10 +46,6 @@ class HomeController < ApplicationController
     
     @data = []
 
-    entries.each do |entry|
-      period_h[entry.day.strftime('%Y-%m-%d')] = entry.weight
-    end
-
 
     @entry_day = Entry.find_by(user_id: @user_id, day: @today)
 

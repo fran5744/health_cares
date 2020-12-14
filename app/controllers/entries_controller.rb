@@ -25,8 +25,19 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     params[:entry][:day] = params[:day]
-    @entry = Entry.new(entry_params)
 
+    cal_check = { "ヨガ" => 100, "ランニング" => 240, "ウォーキング" => 60, "サイクリング" => 160, "縄跳び" => 300, "入浴" => 87, "掃除" => 100, "足踏み" => 80, "TV体操" => 120, "バレー" => 120, "テニス" => 210, "水泳" => 180, "バドミントン" => 200, "ゴルフ" => 100 }
+    if params[:entry][:ex_type_1].present?
+      params[:entry][:ex_amount_1] = cal_check[params[:entry][:ex_type_1]] * params[:entry][:ex_time_1].to_i
+    end
+    if params[:entry][:ex_type_2].present?
+      params[:entry][:ex_amount_2] = cal_check[params[:entry][:ex_type_2]] * params[:entry][:ex_time_2].to_i
+    end
+    if params[:entry][:ex_type_3].present?
+      params[:entry][:ex_amount_3] = cal_check[params[:entry][:ex_type_3]] * params[:entry][:ex_time_3].to_i
+    end
+
+    @entry = Entry.new(entry_params)
     respond_to do |format|
       if @entry.save
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
@@ -42,6 +53,17 @@ class EntriesController < ApplicationController
   # PATCH/PUT /entries/1.json
   def update
     params[:entry][:day] = params[:day]
+    cal_check = { "ヨガ" => 100, "ランニング" => 240, "ウォーキング" => 60, "サイクリング" => 160, "縄跳び" => 300, "入浴" => 87, "掃除" => 100, "足踏み" => 80, "TV体操" => 120, "バレー" => 120, "テニス" => 210, "水泳" => 180, "バドミントン" => 200, "ゴルフ" => 100 }
+    if params[:entry][:ex_type_1].present?
+        params[:entry][:ex_amount_1] = cal_check[params[:entry][:ex_type_1]] * params[:entry][:ex_time_1].to_i
+    end
+    if params[:entry][:ex_type_2].present?
+      params[:entry][:ex_amount_2] = cal_check[params[:entry][:ex_type_2]] * params[:entry][:ex_time_2].to_i
+    end
+    if params[:entry][:ex_type_3].present?
+      params[:entry][:ex_amount_3] = cal_check[params[:entry][:ex_type_3]] * params[:entry][:ex_time_3].to_i
+    end
+
     respond_to do |format|
       if @entry.update(entry_params)
         format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
