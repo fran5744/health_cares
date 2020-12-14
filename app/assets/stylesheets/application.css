@@ -610,10 +610,6 @@
     list-style: none;
     text-align: center;
   }
-  .previous {
-    text-decoration: none;
-  }
-
   body {
     background: linear-gradient( 135deg, rgb(214, 238, 248), rgb(143, 224, 248) );
   }
