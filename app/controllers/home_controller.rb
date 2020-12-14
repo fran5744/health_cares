@@ -51,12 +51,15 @@ class HomeController < ApplicationController
     
     @data = []
 
+<<<<<<< HEAD
     entries.each do |entry|
       period_h[entry.day.strftime('%Y-%m-%d')] = entry.weight
     end
 
     # ハッシュを配列に変換
     @data = period_h.to_a
+=======
+>>>>>>> e05c5d2e440e16aa8934aec5783b020fbd55d95a
 
     logger.debug("==================")
     logger.debug(@data)
