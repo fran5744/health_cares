@@ -5,6 +5,11 @@ class HomeController < ApplicationController
     @yobi = week[@today.wday]
     entries = Entry.where(user_id: session[:user_id])
     period_h = {}
+
+    if params[:period].blank?
+      params[:period] = "week"
+    end
+
     case params[:period]
     when "week" then
       now_week = Date.today.all_week
@@ -50,9 +55,15 @@ class HomeController < ApplicationController
       period_h[entry.day.strftime('%Y-%m-%d')] = entry.weight
     end
 
+    # ハッシュを配列に変換
+    @data = period_h.to_a
 
+    logger.debug("==================")
+    logger.debug(@data)
+    
     @entry_day = Entry.find_by(user_id: @user_id, day: @today)
 
+    
   end
 
   def calendar_index
