@@ -3,14 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
     header{
     z-index: 10;
-    height: 64px;
+    height: 45px;
     position: absolute;
     top: 0px;
-    background-color: #D7EEFF;
+    background-color: rgb(245, 202, 149);
     width: 100%;
     text-align: center;
     z-index: 2;
-    box-shadow: 0px 0px 10px 0px rgba(72, 133, 245, 0.25);
+    box-shadow: 0px 0px 10px 0px rgba(241, 214, 163, 0.986);
     }
 
     nav{
@@ -92,13 +92,13 @@
   text-align: center
  }
 
- .period{
+ .period li{
     font-size: 18px;
     display: inline-block;
     padding: 0.5em 1em 0.3em;
-    color: #ffffff;
+    color: #9ae2c4;
     border-radius: 25px;
-    background-color: #0099ff;
+    background-color: #f0b74e;
     border: none;
     cursor: pointer;
     margin-right: 20px;
