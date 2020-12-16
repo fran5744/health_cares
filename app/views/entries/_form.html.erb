@@ -56,22 +56,22 @@
     <%= form.select :ex_time_3,[["30分","1"],["1時間","2"],["1時間30分","3"],["2時間","4"],["2時間30分","5"],["3時間","6"]],include_blank: "選択してください" %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display: inline-block;">
     <%= form.label :朝食 %>
     <%= form.check_box :meal_asa, id: :entry_meal_asa %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display: inline-block;">
     <%= form.label :昼食 %>
     <%= form.check_box :meal_hiru, id: :entry_meal_hiru %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display: inline-block;">
     <%= form.label :夕食 %>
     <%= form.check_box :meal_ban, id: :entry_meal_ban %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display: inline-block;">
     <%= form.label :間食 %>
     <%= form.check_box :snack, id: :entry_snack %>
   </div>

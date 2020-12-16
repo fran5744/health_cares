@@ -72,6 +72,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    height: 100px;
     width: 200px;
     background-color: #f1f1f1;
     position: relative;
@@ -181,3 +182,5 @@
   .calendar-heading {
     text-align: center;
   }
+
+
