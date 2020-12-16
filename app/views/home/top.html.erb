@@ -4,14 +4,10 @@
   <div class="wrapper site-header__wrapper">
     <a href="#" class="health_care">ヘルスケア</a>
     <nav class="nav">
-      <button class="nav__toggle" aria-expanded="false" type="button">
-        menu
-      </button>
-      <ul class="nav__wrapper">
+      <class="nav__wrapper">
         <li class="nav__item"><a href="http://localhost:3000/home/top">トップ</a></li>
-        <li class="nav__item">
          <% if current_user == nil %>
-            <%= link_to "ログイン", logins_login_path %>
+            <li><%= link_to "ログイン", logins_login_path %></li>
             <%= link_to '新規登録',new_user_path %>
            <% else %>
             <%= link_to 'ログアウト', logins_logout_path, method: :post %>
@@ -20,7 +16,6 @@
         
 
         <li class="nav__item"><a href="http://localhost:3000/users">設定</a></li>
-      </ul>
     </nav>
   </div>
 </header>
@@ -29,14 +24,9 @@
 </body>
 
 <table>
-<%= @today %> (<%= @yobi %>)
+<center><h1><%= @today %> (<%= @yobi %>)</h1></center>
 <%= @user_id %><a>さんこんにちは！！</a>
-<%= @memo %>
-<br>
-<%= @entry_day %>
-<div>
-    <%= link_to '新規登録',new_user_path %>
-</div>
+
 
 <nav>
 <div align="center">
