@@ -26,7 +26,8 @@
   .main {
     display: block;
     width: 800px;
-    margin-right: 20px;
+    margin-left: 50px;
+    margin-right: auto;
   }
   .sidebar_l {
     width: 200px;
@@ -130,22 +131,6 @@
     font-size: 40px;
   }
 
-<<<<<<< HEAD
-  .food-name {
-    
-  }
-
-  .food-photo {
-
-  }
-
-  .food-legend {
-
-  }
-
-  .food-type {
-
-=======
   #awan {
   position:fixed;
   top:0px;left:0px;
@@ -608,21 +593,11 @@
   }
   .LinkedIn:hover {
     color: white;
->>>>>>> e05c5d2e440e16aa8934aec5783b020fbd55d95a
   }
 
-  table{
-    width: 50%;
+  .memo {
+    background-color: azure;
   }
-  
-  th{
-    width: 20%;
-  }
-  
-  td{
-    width: 30%;
-  }
-  
   .memo_entry {
     list-style: none;
     text-align: center;
@@ -631,13 +606,14 @@
     background: linear-gradient( 135deg, rgb(214, 238, 248), rgb(143, 224, 248) );
   }
 
-
-
   .table-striped th {
-    width: 10%;
     text-align: center;
   }
 
   .calendar-heading {
     text-align: center;
+  }
+
+  .simple-calendar {
+    background-color: white;
   }
