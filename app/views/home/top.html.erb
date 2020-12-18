@@ -1,16 +1,16 @@
 <body>
 <!-- Header Start -->
-<header class="site-header">
+<header class="site-header" style="padding-top: 27px;">
   <div class="wrapper site-header__wrapper">
     <a href="#" class="health_care">ヘルスケア</a>
     <nav class="nav">
       <class="nav__wrapper">
         <li class="nav__item"><a href="http://localhost:3000/home/top">トップ</a></li>
          <% if current_user == nil %>
-            <li><%= link_to "ログイン", logins_login_path %></li>
-            <%= link_to '新規登録',new_user_path %>
+            <li class="nav__item"><%= link_to "ログイン", logins_login_path %></li>
+            <li class="nav__item"><%= link_to '新規登録',new_user_path %></li>
            <% else %>
-            <%= link_to 'ログアウト', logins_logout_path, method: :post %>
+           <li class="nav__item"><%= link_to 'ログアウト', logins_logout_path, method: :post %></li>
           <% end %>
         </li>
         
@@ -28,7 +28,7 @@
 <%= @user_id %><a>さんこんにちは！！</a>
 
 
-<nav>
+<nav class="period">
 <div align="center">
 <ul>
    <li><%= link_to '週',home_top_path(period: "week") %></li>
@@ -47,12 +47,6 @@
             <ul>
               <li><%= link_to '筋トレ',posts_path(m_type: 1) %></li>
               <li><%= link_to 'ダイエット',posts_path(m_type: 2) %></li>
-            </ul>
-          </li>
-          <li><%= '器具' %>
-            <ul>
-              <li><%= link_to '筋トレ',foods_path(ff_type: 1) %></li>
-              <li><%= link_to 'ダイエット',posts_path(ff_type: 2) %></li>
             </ul>
           </li>
           <li><%= '食べ物' %>

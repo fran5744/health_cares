@@ -35,7 +35,7 @@
   }
   .sidebar {
     width: 200px;
-    background-color: #FFF6D9 ;
+    background-color:rgb(252, 224, 192);
     margin-left: auto;
   }
   .sidebar__item {
@@ -73,6 +73,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    height: 100px;
     width: 200px;
     background-color: #f1f1f1;
     position: relative;
@@ -603,7 +604,7 @@
     text-align: center;
   }
   body {
-    background: linear-gradient( 135deg, rgb(214, 238, 248), rgb(143, 224, 248) );
+    background: linear-gradient( 135deg, #f7df9ef8, rgb(247, 236, 213) );
   }
 
   .table-striped th {
