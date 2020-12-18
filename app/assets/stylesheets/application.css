@@ -26,7 +26,8 @@
   .main {
     display: block;
     width: 800px;
-    margin-right: 20px;
+    margin-left: 50px;
+    margin-right: auto;
   }
   .sidebar_l {
     width: 200px;
@@ -34,7 +35,7 @@
   }
   .sidebar {
     width: 200px;
-    background-color: #FFF6D9 ;
+    background-color:rgb(252, 224, 192);
     margin-left: auto;
   }
   .sidebar__item {
@@ -129,27 +130,19 @@
   table{
     width: 50%;
   }
-  
-  th{
-    width: 20%;
+
+  .memo {
+    background-color: azure;
   }
-  
-  td{
-    width: 30%;
-  }
-  
   .memo_entry {
     list-style: none;
     text-align: center;
   }
   body {
-    background: linear-gradient( 135deg, rgb(214, 238, 248), rgb(143, 224, 248) );
+    background: linear-gradient( 135deg, #f7df9ef8, rgb(247, 236, 213) );
   }
 
-
-
   .table-striped th {
-    width: 10%;
     text-align: center;
   }
 
