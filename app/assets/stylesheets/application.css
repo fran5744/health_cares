@@ -142,11 +142,15 @@
     background: linear-gradient( 135deg, #f7df9ef8, rgb(247, 236, 213) );
   }
 
+  .simple-calendar {
+    background-color: white;
+  }
   .table-striped th {
     text-align: center;
   }
 
   .calendar-heading {
     text-align: center;
+    background: linear-gradient( 135deg, #f7df9ef8, rgb(247, 236, 213) );
   }
 
