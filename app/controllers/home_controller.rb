@@ -68,11 +68,18 @@ class HomeController < ApplicationController
 
   def calendar_index
     calendar_day = params[:calendar_day]
+    # カレンダーの月を変更して、日付を選んだ場合
+    if params[:start_date].present?
+      session[:start_date] = params[:start_date]
+    else
+      session[:start_date] = Date.today.strftime('%Y-%m-%d')
+    end
     if calendar_day
       @entry = Entry.find_by(user_id: session[:user_id], day: calendar_day.to_date)
     else
       @entry = nil
     end
+
   end
 
   def update
@@ -80,7 +87,7 @@ class HomeController < ApplicationController
     entry = Entry.find_by(user_id: session[:user_id] , day: calendar_day.to_date)
     results = { :message => entry }
     #render partial: 'ajax_partial', locals: { :results => results }
-    redirect_to home_calendar_index_path(calendar_day: params[:calendar_day])
+    redirect_to home_calendar_index_path(calendar_day: params[:calendar_day], start_date: session[:start_date])
   end
 end
 

@@ -50,9 +50,9 @@
 <div class="memo">
   <% if @entry %>
     <ul class="memo_entry">
-      <li>日付      :<%= @entry.day %></li>
-      <li>体重      :<%= @entry.weight %></li>
-      <li>身長      :<%= @entry.height %></li>
+      <li><%= @entry.day %></li>
+      <li>体重      :<%= @entry.weight %>kg</li>
+      <li>身長      :<%= @entry.height %>cm</li>
       <li>運動種類  :<%= @entry.ex_type_1 %></li>
       <li>運動時間  :<%= @entry.ex_time_1 %></li>
       <li>カロリー  :<%= @entry.ex_amount_1 %></li>
