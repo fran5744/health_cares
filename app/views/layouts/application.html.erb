@@ -8,10 +8,28 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <center><%= image_tag 'header.jpg', :width => '400', :height => '200' %></center>
+  <center><%= image_tag 'header.jpg', :width => '400', :height => '70' %></center>
+  <header class="site-header" style="padding-top: 27px;">
+  <div class="wrapper site-header__wrapper">
+  <a href="#" class="health_care"><%= @user_id %><a>さんこんにちは！！</a></a>
+  <nav class="nav">
+    <class="nav__wrapper">
+      <li class="nav__item"><a href="http://localhost:3000/home/top">トップ</a></li>
+       <% if current_user == nil %>
+          <li class="nav__item"><%= link_to "ログイン", logins_login_path %></li>
+          <li class="nav__item"><%= link_to '新規登録',new_user_path %></li>
+         <% else %>
+         <li class="nav__item"><%= link_to 'ログアウト', logins_logout_path, method: :post %></li>
+        <% end %>
+      </li>
+      
+
+      <li class="nav__item"><a href="http://localhost:3000/users">設定</a></li>
+  </nav>
+</div>
+</header>
     <div class="col-8">
       <%= yield %>
     </div>
-
   </body>
 </html>
