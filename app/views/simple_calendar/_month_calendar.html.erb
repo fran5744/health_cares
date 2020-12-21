@@ -1,8 +1,8 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-      <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view, :style=>"text-decoration: none;" %>
+      <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view, :style=>"text-decoration: none; font-size: 30px;" %>
     <span class="calendar-title"><%= start_date.year %>年<%= start_date.month %>月</span>
-    <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view, :style=>"text-decoration: none;" %>
+    <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view, :style=>"text-decoration: none; font-size: 30px;" %>
   </div>
 
   <table class="table-striped">
@@ -24,7 +24,7 @@
                   <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
                 <% else %>
                   <%= form_tag({controller: "home", action: "update" }, {method: "post"}) do %>
-                    <button name="calendar_day" value='<%= day %>' style="border: none;" ><% passed_block.call day, sorted_events.fetch(day, []) %></button><br>
+                    <button name="calendar_day" value='<%= day %>' style="border: none; font-size: 18px;" ><% passed_block.call day, sorted_events.fetch(day, []) %></button><br>
                   <% end %>
                 <% end %>
               <% end %>

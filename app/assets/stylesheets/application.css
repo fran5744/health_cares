@@ -132,11 +132,12 @@
   }
 
   .memo {
-    background-color: azure;
+    background-color: rgb(253, 214, 128);
   }
   .memo_entry {
     list-style: none;
     text-align: center;
+    font-size: 18px;
   }
   body {
     background: linear-gradient( 135deg, #f7df9ef8, rgb(247, 236, 213) );
@@ -147,10 +148,11 @@
   }
   .table-striped th {
     text-align: center;
+    font-size: 18px;
   }
 
   .calendar-heading {
     text-align: center;
-    background: linear-gradient( 135deg, #f7df9ef8, rgb(247, 236, 213) );
+    background: linear-gradient( 135deg, #f8e3aaf8, rgb(248, 232, 200) );
   }
 
