@@ -6,21 +6,15 @@
       <ul class="sidenav">
         <li><%= '動画' %>
           <ul>
-            <li><a href="筋トレ">筋トレ</a></li>
-            <li><a href="ダイエット">ダイエット</a></li>
-          </ul>
+          <li><%= link_to '筋トレ',posts_path(m_type: 1) %></li>
+          <li><%= link_to 'ダイエット',posts_path(m_type: 2) %></li>
+      </ul>
        </li>
-        <li><%= '器具' %>
-          <ul>
-            <li><a href="筋トレ">筋トレ</a></li>
-            <li><a href="ダイエット">ダイエット</a></li>
-          </ul>
-        </li>
         <li><%= '食べ物' %>
           <ul>
-            <li><a href="筋トレ">筋トレ</a></li>
-            <li><a href="ダイエット">ダイエット</a></li>
-          </ul>
+          <li><%= link_to '筋トレ',foods_path(ff_type: 1) %></li>
+          <li><%= link_to 'ダイエット',foods_path(ff_type: 2) %></li>
+      </ul>
         </li>
       </ul>
     </div>
@@ -39,7 +33,7 @@
   <div class="sidebar">
     <div class="sidebar__item">
       <ul class="sidenav">
-        <li><%= link_to '登録',entries_path %></li>
+        <li><%= link_to '登録',new_entry_path %></li>
         <li><%= link_to '体重管理グラフ','top' %></li>
         <li><%= link_to '設定',users_path %></li>
       </ul>

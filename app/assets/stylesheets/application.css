@@ -128,7 +128,7 @@
   }
 
   table{
-    width: 50%;
+    width: 100%;
   }
 
   .memo {
@@ -150,3 +150,13 @@
     text-align: center;
   }
 
+  form {
+    text-align:center;
+    font-size: 2vh;
+    font-weight: bold;
+  }
+
+  select {
+    border :1px solid #eee;
+    font-size :16px;
+  }

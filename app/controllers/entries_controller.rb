@@ -26,15 +26,17 @@ class EntriesController < ApplicationController
   def create
     params[:entry][:day] = params[:day]
 
+
     cal_check = { "ヨガ" => 100, "ランニング" => 240, "ウォーキング" => 60, "サイクリング" => 160, "縄跳び" => 300, "入浴" => 87, "掃除" => 100, "足踏み" => 80, "TV体操" => 120, "バレー" => 120, "テニス" => 210, "水泳" => 180, "バドミントン" => 200, "ゴルフ" => 100 }
+    cal_check_time = { "30分" => 1, "1時間" => 2, "2時間" => 3, "2時間30分" => 5, "3時間" => 6}
     if params[:entry][:ex_type_1].present?
-      params[:entry][:ex_amount_1] = cal_check[params[:entry][:ex_type_1]] * params[:entry][:ex_time_1].to_i
+      params[:entry][:ex_amount_1] = cal_check[params[:entry][:ex_type_1]] * cal_check_time[params[:entry][:ex_time_1]]
     end
     if params[:entry][:ex_type_2].present?
-      params[:entry][:ex_amount_2] = cal_check[params[:entry][:ex_type_2]] * params[:entry][:ex_time_2].to_i
+      params[:entry][:ex_amount_2] = cal_check[params[:entry][:ex_type_2]] * cal_check_time[params[:entry][:ex_time_2]]
     end
     if params[:entry][:ex_type_3].present?
-      params[:entry][:ex_amount_3] = cal_check[params[:entry][:ex_type_3]] * params[:entry][:ex_time_3].to_i
+      params[:entry][:ex_amount_3] = cal_check[params[:entry][:ex_type_3]] * cal_check_time[params[:entry][:ex_time_3]]
     end
 
     @entry = Entry.new(entry_params)
@@ -54,14 +56,15 @@ class EntriesController < ApplicationController
   def update
     params[:entry][:day] = params[:day]
     cal_check = { "ヨガ" => 100, "ランニング" => 240, "ウォーキング" => 60, "サイクリング" => 160, "縄跳び" => 300, "入浴" => 87, "掃除" => 100, "足踏み" => 80, "TV体操" => 120, "バレー" => 120, "テニス" => 210, "水泳" => 180, "バドミントン" => 200, "ゴルフ" => 100 }
+    cal_check_time = { "30分" => 1, "1時間" => 2, "1時間30分" => 3, "2時間" => 4, "2時間30分" => 5, "3時間" => 6}
     if params[:entry][:ex_type_1].present?
-        params[:entry][:ex_amount_1] = cal_check[params[:entry][:ex_type_1]] * params[:entry][:ex_time_1].to_i
+      params[:entry][:ex_amount_1] = cal_check[params[:entry][:ex_type_1]] * cal_check_time[params[:entry][:ex_time_1]]
     end
     if params[:entry][:ex_type_2].present?
-      params[:entry][:ex_amount_2] = cal_check[params[:entry][:ex_type_2]] * params[:entry][:ex_time_2].to_i
+      params[:entry][:ex_amount_2] = cal_check[params[:entry][:ex_type_2]] * cal_check_time[params[:entry][:ex_time_2]]
     end
     if params[:entry][:ex_type_3].present?
-      params[:entry][:ex_amount_3] = cal_check[params[:entry][:ex_type_3]] * params[:entry][:ex_time_3].to_i
+      params[:entry][:ex_amount_3] = cal_check[params[:entry][:ex_type_3]] * cal_check_time[params[:entry][:ex_time_3]]
     end
 
     respond_to do |format|
