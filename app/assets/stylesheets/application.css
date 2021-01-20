@@ -135,8 +135,10 @@
     background-color: rgb(253, 214, 128);
   }
   .memo_entry {
+    width: 60%;
     list-style: none;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 18px;
   }
   body {

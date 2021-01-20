@@ -43,55 +43,71 @@
 
 <div class="memo">
   <% if @entry %>
-    <ul class="memo_entry">
-      <li><%= @entry.day %></li>
-      <li>体重      :<%= @entry.weight %>kg</li>
-      <li>身長      :<%= @entry.height %>cm</li>
-      <li>運動種類  :<%= @entry.ex_type_1 %></li>
-      <li>運動時間  :<%= @entry.ex_time_1 %></li>
-      <li>カロリー  :<%= @entry.ex_amount_1 %></li>
-      <li>運動種類  :<%= @entry.ex_type_2 %></li>
-      <li>運動時間  :<%= @entry.ex_time_2 %></li>
-      <li>カロリー  :<%= @entry.ex_amount_2 %></li>
-      <li>運動種類  :<%= @entry.ex_type_3 %></li>
-      <li>運動時間  :<%= @entry.ex_time_3 %></li>
-      <li>カロリー  :<%= @entry.ex_amount_3 %></li>
-      <li>食事 朝   :<% if (@entry.meal_asa == true) %>
-                        〇
-                    <% else %>
-                        ✖
-                    <% end %>
-      </li>
-      <li>食事 昼   :<% if (@entry.meal_hiru == true) %>
-                        〇
-                    <% else %>
-                        ✖
-                    <% end %>
-      </li>
-      <li>食事 晩   :<% if (@entry.meal_asa == true) %>
-                        〇
-                    <% else %>
-                        ✖
-                    <% end %>
-      </li>
-      <li>間食      :<% if (@entry.snack == true) %>
-                        〇
-                    <% else %>
-                        ✖
-                    <% end %>
-      </li>
-      <li>食べたもの :<%= @entry.snack_memo %></li>
-      <li>体調      :
-        <% case @entry.condition %>
+    <table class="memo_entry">
+      <tr>
+        <th colspan="4"><%= @entry.day %></th>
+      </tr>
+      <tr>
+        <td>体重  :<%= @entry.weight %>kg</td>
+        <td>身長  :<%= @entry.height %>cm</td>
+        <td>体調      :
+          <% case @entry.condition %>
           <% when 0 then %>
-            良い
+              良い
           <% when 1 then %>
-            普通
+              普通
           <% else %>
-            悪い
-        <% end %>
-      </li>
-      <li>メモ      :<%= @entry.memo %></li>
-    </ul>
+              悪い
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td>運動種類  :<%= @entry.ex_type_1 %></td>
+        <td>運動時間  :<%= @entry.ex_time_1 %></td>
+        <td>カロリー  :<%= @entry.ex_amount_1 %>kcal</td>
+      </tr>
+      <tr>
+        <td>運動種類  :<%= @entry.ex_type_2 %></td>
+        <td>運動時間  :<%= @entry.ex_time_2 %></td>
+        <td>カロリー  :<%= @entry.ex_amount_2 %>kcal</td>
+      </tr>
+      <tr>
+        <td>運動種類  :<%= @entry.ex_type_3 %></td>
+        <td>運動時間  :<%= @entry.ex_time_3 %></td>
+        <td>カロリー  :<%= @entry.ex_amount_3 %>kcal</td>
+      </tr>
+      <tr>
+        <td>食事 朝   :<% if (@entry.meal_asa == true) %>
+                          〇
+                      <% else %>
+                          ✖
+                      <% end %>
+        </td>
+        <td>昼   :<% if (@entry.meal_hiru == true) %>
+                          〇
+                      <% else %>
+                          ✖
+                      <% end %>
+        </td>
+        <td>晩   :<% if (@entry.meal_asa == true) %>
+                          〇
+                      <% else %>
+                          ✖
+                      <% end %>
+        </td>
+        <td>間食      :<% if (@entry.snack == true) %>
+                          〇
+                      <% else %>
+                          ✖
+                      <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">食べたもの :<%= @entry.snack_memo %></td>
+      </tr>
+      <tr>
+        <td colspan="4">メモ :<%= @entry.memo %></td>
+      </tr>
+    </table>
   <% end %>
 </div>
