@@ -132,14 +132,18 @@
   }
 
   .memo {
-    background-color: rgb(253, 214, 128);
+    background-color: rgb(252, 219, 147);
   }
   .memo_entry {
     width: 60%;
     list-style: none;
     margin-left: auto;
     margin-right: auto;
-    font-size: 18px;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  .memo_entry td {
+    font-size: 15px;
   }
   body {
     background: linear-gradient( 135deg, #f7df9ef8, rgb(247, 236, 213) );
