@@ -172,3 +172,8 @@
     border :1px solid #eee;
     font-size :16px;
   }
+
+  .users td {
+    text-align:center;
+
+  }
