@@ -153,13 +153,19 @@
   }
 
   .memo {
-    background-color: rgb(253, 214, 128);
+    background-color: rgb(252, 219, 147);
   }
 
   .memo_entry {
+    width: 60%;
     list-style: none;
-    text-align: center;
-    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  .memo_entry td {
+    font-size: 15px;
   }
 
   body {
@@ -191,6 +197,7 @@
     font-size :16px;
   }
 
+<<<<<<< HEAD
   .btn {
     padding: 6px 15px;
     margin: 0 auto;
@@ -218,3 +225,9 @@
     border: 2px solid #11A9B5;
     color: #11A9B5 !important;
 }
+=======
+  .users td {
+    text-align:center;
+
+  }
+>>>>>>> dd42a572c11b640690866c2f857853fbfe7f1298
