@@ -15,7 +15,7 @@
  *= require_self
  */
   .data {
-    text-align:center;
+    text-align: center;
    }
 
    .container {
@@ -35,7 +35,7 @@
   }
   .sidebar {
     width: 200px;
-    background-color:rgb(252, 224, 192);
+    background-color: rgb(252, 224, 192);
     margin-left: auto;
   }
   .sidebar__item {
@@ -163,17 +163,16 @@
   }
 
   form {
-    text-align:center;
+    text-align: center;
     font-size: 2vh;
     font-weight: bold;
   }
 
   select {
-    border :1px solid #eee;
-    font-size :16px;
+    border: 1px solid #eee;
+    font-size: 16px;
   }
 
   .users td {
-    text-align:center;
-
+    text-align: center;
   }

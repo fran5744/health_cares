@@ -1,6 +1,6 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-      <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view, :style=>"text-decoration: none; font-size: 30px;" %>
+    <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view, :style=>"text-decoration: none; font-size: 30px;" %>
     <span class="calendar-title"><%= start_date.year %>年<%= start_date.month %>月</span>
     <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view, :style=>"text-decoration: none; font-size: 30px;" %>
   </div>
@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-    <div>
+      <div>
         <% date_range.each_slice(7) do |week| %>
           <tr>
             <% week.each do |day| %>
@@ -30,8 +30,8 @@
               <% end %>
             <% end %>
           </tr>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
     </tbody>
   </table>
 </div>

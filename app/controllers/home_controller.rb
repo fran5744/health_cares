@@ -48,7 +48,7 @@ class HomeController < ApplicationController
     end
     @user_id = session[:user_id]
     @authority = session[:authority]
-    
+
     @data = []
 
     entries.each do |entry|
@@ -60,10 +60,8 @@ class HomeController < ApplicationController
 
     logger.debug("==================")
     logger.debug(@data)
-    
-    @entry_day = Entry.find_by(user_id: @user_id, day: @today)
 
-    
+    @entry_day = Entry.find_by(user_id: @user_id, day: @today)
   end
 
   def calendar_index
@@ -79,7 +77,6 @@ class HomeController < ApplicationController
     else
       @entry = nil
     end
-
   end
 
   def update

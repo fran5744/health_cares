@@ -25,8 +25,6 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     params[:entry][:day] = params[:day]
-
-
     cal_check = { "ヨガ" => 100, "ランニング" => 240, "ウォーキング" => 60, "サイクリング" => 160, "縄跳び" => 300, "入浴" => 87, "掃除" => 100, "足踏み" => 80, "TV体操" => 120, "バレー" => 120, "テニス" => 210, "水泳" => 180, "バドミントン" => 200, "ゴルフ" => 100 }
     cal_check_time = { "30分" => 1, "1時間" => 2, "2時間" => 3, "2時間30分" => 5, "3時間" => 6}
     if params[:entry][:ex_type_1].present?
