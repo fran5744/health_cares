@@ -128,16 +128,22 @@
   }
 
   table{
-    width: 50%;
+    width: 100%;
   }
 
   .memo {
-    background-color: rgb(253, 214, 128);
+    background-color: rgb(252, 219, 147);
   }
   .memo_entry {
+    width: 60%;
     list-style: none;
-    text-align: center;
-    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  .memo_entry td {
+    font-size: 15px;
   }
   body {
     background: linear-gradient( 135deg, #f7df9ef8, rgb(247, 236, 213) );
@@ -156,3 +162,18 @@
     background: linear-gradient( 135deg, #f8e3aaf8, rgb(248, 232, 200) );
   }
 
+  form {
+    text-align:center;
+    font-size: 2vh;
+    font-weight: bold;
+  }
+
+  select {
+    border :1px solid #eee;
+    font-size :16px;
+  }
+
+  .users td {
+    text-align:center;
+
+  }

@@ -52,6 +52,35 @@
 
   <% end %>
 
+  <% if current_user == nil %>
+  <div class="field">
+    <%= form.label 'ユーザーID' %>
+    <%= form.text_field :user_id, id: :user_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'パスワード' %>
+    <%= form.password_field :password, id: :user_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'パスワード確認' %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= form.label '名前' %>
+    <%= form.text_field :name, id: :user_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label '権限' %>
+    <label><%= form.radio_button :authority, 0 %> 生徒 </label>
+    <label><%= form.radio_button :authority, 1 %> 先生 </label>
+  </div>
+
+<% end %>
+
   <div class="actions">
     <%= form.submit '登録' %>
   </div>
