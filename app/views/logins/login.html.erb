@@ -27,7 +27,7 @@
   </div>
 </section>
 
-<div class = "login">
+<div class = "login" style="text-align:center;">
  <h1>ログイン画面</h1>
 
  <h3><font color="red"><%= flash[:alert]  %></font><h3>
@@ -45,11 +45,13 @@
      <td><%= password_field_tag :pass, params[:pass] %></td>
    </tr>
 
-   <tr>
-   <td><%= submit_tag "ログイン" %></td>
-   </tr>
+
 
   </table>
   </center>
 </div>
+  <div class="actions">
+    <%= submit_tag "ログイン", class: 'btn btn-primary btn-block' %>
+  </div>
+
 <% end %>

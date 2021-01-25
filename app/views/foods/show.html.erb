@@ -7,7 +7,7 @@
 
 <p>
   <strong>画像:</strong>
-  <% if @food.f_filename.present? %>
+    <% if @food.f_filename.present? %>
     <br>
     <%= image_tag @food.f_filename, size: '200x200' %>
   <% end %>
@@ -26,7 +26,6 @@
     ダイエット食
   <% end %>
 </p>
-
 
 <%= link_to '変更', edit_food_path(@food) %> |
 <%= link_to '戻る', foods_path %>

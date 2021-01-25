@@ -2,108 +2,99 @@
   <% if entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
-
-      <ul>
-      <% entry.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+          <% entry.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+          <% end %>
+        </ul>
     </div>
   <% end %>
 
-  <div class="field" style="text-align: center; color: red; ">
-    <%= form.label :ユーザーID %>
-    <%= form.text_field :user_id, id: :entry_user_id, readonly: true %>
-  </div>
+<table>
+    <tr>
+      <div class="field">
+        <th><%= form.label :ユーザーID %></th>
+        <td><%= form.text_field :user_id, id: :entry_user_id, readonly: true %></td>
+      </div>
+    </tr>
 
-  <div class="field" style="text-align: center;">
-    <%= form.label :体重 %>
-    <%= form.number_field :weight, id: :entry_weight %>
-  </div>
-
-  <div class="field" style="text-align: center;">
-    <%= form.label :身長 %>
-    <%= form.number_field :height, id: :entry_height %>
-  </div>
-
-  <table align="center">
   <tr>
-  <td>
-  <div class="field">
-    <%= form.label :運動種類 %>
-    <%= form.select :ex_type_1,[["ヨガ","ヨガ"],["ランニング","ランニング"],["ウォーキング","ウォーキング"],["サイクリング","サイクリング"],["縄跳び","縄跳び"],["入浴","入浴"],["掃除","掃除"],["足踏み","足踏み"],["TV体操","TV体操"],["バレー","バレー"],["テニス","テニス"],["水泳","水泳"],["バドミントン","バドミントン"],["ゴルフ","ゴルフ"]],include_blank: "選択してください" %>
-  </div>
-  <div class="field">
-    <%= form.label :運動時間 %>
-    <%= form.select :ex_time_1,[["30分","30分"],["1時間","1時間"],["1時間30分","1時間30分"],["2時間","2時間"],["2時間30分","2時間30分"],["3時間","3時間"]],include_blank: "選択してください" %>
-  </div>
-  </td>
-
-  <td>
-  <div class="field">
-    <%= form.label :運動種類 %>
-    <%= form.select :ex_type_2,[["ヨガ","ヨガ"],["ランニング","ランニング"],["ウォーキング","ウォーキング"],["サイクリング","サイクリング"],["縄跳び","縄跳び"],["入浴","入浴"],["掃除","掃除"],["足踏み","足踏み"],["TV体操","TV体操"],["バレー","バレー"],["テニス","テニス"],["水泳","水泳"],["バドミントン","バドミントン"],["ゴルフ","ゴルフ"]],include_blank: "選択してください" %>
-  </div>
-  <div class="field">
-    <%= form.label :運動時間 %>
-    <%= form.select :ex_time_2,[["30分","30分"],["1時間","1時間"],["1時間30分","1時間30分"],["2時間","2時間"],["2時間30分","2時間30分"],["3時間","3時間"]],include_blank: "選択してください" %>
-  </div>
-  </td>
-
-  <td>
-  <div class="field">
-    <%= form.label :運動種類 %>
-    <%= form.select :ex_type_3,[["ヨガ","ヨガ"],["ランニング","ランニング"],["ウォーキング","ウォーキング"],["サイクリング","サイクリング"],["縄跳び","縄跳び"],["入浴","入浴"],["掃除","掃除"],["足踏み","足踏み"],["TV体操","TV体操"],["バレー","バレー"],["テニス","テニス"],["水泳","水泳"],["バドミントン","バドミントン"],["ゴルフ","ゴルフ"]],include_blank: "選択してください" %>
-  </div>
-  <div class="field">
-    <%= form.label :運動時間 %>
-    <%= form.select :ex_time_3,[["30分","30分"],["1時間","1時間"],["1時間30分","1時間30分"],["2時間","2時間"],["2時間30分","2時間30分"],["3時間","3時間"]],include_blank: "選択してください" %>
-  </div>
-  </td>
+    <div class="field" style="text-align: center;">
+      <th><%= form.label :体重 %></th>
+      <td><%= form.number_field :weight, id: :entry_weight %></td>
+    </div>
   </tr>
-  </table>
 
-  <div class="field" style="display: inline-block;">
-    <%= form.label :朝食 %>
-    <%= form.check_box :meal_asa, id: :entry_meal_asa %>
-  </div>
+  <tr>
+    <div class="field" style="text-align: center;">
+      <th><%= form.label :身長 %></th>
+      <td><%= form.number_field :height, id: :entry_height %></td>
+    </div>
+  </tr>
 
-  <div class="field" style="display: inline-block;">
-    <%= form.label :昼食 %>
-    <%= form.check_box :meal_hiru, id: :entry_meal_hiru %>
-  </div>
+  <tr>
+    <div class="field">
+      <th><%= form.label :運動種類 %></th>
+      <td><%= form.select :ex_type_1,[["ヨガ","ヨガ"],["ランニング","ランニング"],["ウォーキング","ウォーキング"],["サイクリング","サイクリング"],["縄跳び","縄跳び"],["入浴","入浴"],["掃除","掃除"],["足踏み","足踏み"],["TV体操","TV体操"],["バレー","バレー"],["テニス","テニス"],["水泳","水泳"],["バドミントン","バドミントン"],["ゴルフ","ゴルフ"]],include_blank: "運動種類１" %></td>
+      <td><%= form.select :ex_type_2,[["ヨガ","ヨガ"],["ランニング","ランニング"],["ウォーキング","ウォーキング"],["サイクリング","サイクリング"],["縄跳び","縄跳び"],["入浴","入浴"],["掃除","掃除"],["足踏み","足踏み"],["TV体操","TV体操"],["バレー","バレー"],["テニス","テニス"],["水泳","水泳"],["バドミントン","バドミントン"],["ゴルフ","ゴルフ"]],include_blank: "運動種類２" %></td>
+      <td><%= form.select :ex_type_3,[["ヨガ","ヨガ"],["ランニング","ランニング"],["ウォーキング","ウォーキング"],["サイクリング","サイクリング"],["縄跳び","縄跳び"],["入浴","入浴"],["掃除","掃除"],["足踏み","足踏み"],["TV体操","TV体操"],["バレー","バレー"],["テニス","テニス"],["水泳","水泳"],["バドミントン","バドミントン"],["ゴルフ","ゴルフ"]],include_blank: "運動種類３" %></td>
+    </div>
+  </tr>
 
-  <div class="field" style="display: inline-block;">
-    <%= form.label :夕食 %>
-    <%= form.check_box :meal_ban, id: :entry_meal_ban %>
-  </div>
+  <tr>
+    <div class="field">
+      <th><%= form.label :運動時間 %></th>
+      <td><%= form.select :ex_time_1,[["30分","30分"],["1時間","1時間"],["1時間30分","1時間30分"],["2時間","2時間"],["2時間30分","2時間30分"],["3時間","3時間"]],include_blank: "運動時間１" %></td>
+      <td><%= form.select :ex_time_2,[["30分","30分"],["1時間","1時間"],["1時間30分","1時間30分"],["2時間","2時間"],["2時間30分","2時間30分"],["3時間","3時間"]],include_blank: "運動時間２" %></td>
+      <td><%= form.select :ex_time_3,[["30分","30分"],["1時間","1時間"],["1時間30分","1時間30分"],["2時間","2時間"],["2時間30分","2時間30分"],["3時間","3時間"]],include_blank: "運動時間３" %></td>
+    </div>
+  </tr>
 
-  <div class="field" style="display: inline-block;">
-    <%= form.label :間食 %>
-    <%= form.check_box :snack, id: :entry_snack %>
-  </div>
-
-  <div class="field">
-    <%= form.label :食べたもの %>
-    <%= form.text_area :snack_memo, id: :entry_snack_memo %>
-  </div>
-
-  <div class="field">
-      <%= form.label :体調 %>
-      <label><%= form.radio_button :condition, 0 %> 良い </label>
-      <label><%= form.radio_button :condition, 1 %> ふつう </label>
-      <label><%= form.radio_button :condition, 2 %> 悪い </label>
-  </div>
 
   <div class="field">
-    <%= form.label :日付 %>
-    <%= date_field_tag :day, id: :entry_day %>
+    <tr>
+      <th>食事</th>
+      <td><%= form.label :朝食 %><%= form.check_box :meal_asa, id: :entry_meal_asa %></td>
+      <td><%= form.label :昼食 %><%= form.check_box :meal_hiru, id: :entry_meal_hiru %></td>
+      <td><%= form.label :夕食 %><%= form.check_box :meal_ban, id: :entry_meal_ban %></td>
+      <td><%= form.label :間食 %><%= form.check_box :snack, id: :entry_snack %></td>
+    </tr>
   </div>
 
-  <div class="field">
-    <%= form.label :メモ %>
-    <%= form.text_area :memo, id: :entry_memo %>
-  </div>
+
+
+  <tr>
+    <div class="field">
+      <th><%= form.label :食べたもの %></th>
+      <td><%= form.text_area :snack_memo, id: :entry_snack_memo %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="field">
+      <th><%= form.label :体調 %></th>
+      <td><label><%= form.radio_button :condition, 0 %> 良い </label></td>
+      <td><label><%= form.radio_button :condition, 1 %> ふつう </label></td>
+      <td><label><%= form.radio_button :condition, 2 %> 悪い </label></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="field">
+      <th><%= form.label :日付 %></th>
+      <td><%= date_field_tag :day, id: :entry_day %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="field">
+      <th><%= form.label :メモ %></th>
+      <td><%= form.text_area :memo, id: :entry_memo %></td>
+    </div>
+  </tr>
+</table>
 
   <div class="actions">
     <%= form.submit '新規登録', class: 'btn btn-primary btn-block' %>
