@@ -6,15 +6,15 @@
       <ul class="sidenav">
         <li><%= '動画' %>
           <ul>
-          <li><%= link_to '筋トレ',posts_path(m_type: 1) %></li>
-          <li><%= link_to 'ダイエット',posts_path(m_type: 2) %></li>
-      </ul>
-       </li>
+            <li><%= link_to '筋トレ',posts_path(m_type: 1) %></li>
+            <li><%= link_to 'ダイエット',posts_path(m_type: 2) %></li>
+          </ul>
+        </li>
         <li><%= '食べ物' %>
           <ul>
-          <li><%= link_to '筋トレ',foods_path(ff_type: 1) %></li>
-          <li><%= link_to 'ダイエット',foods_path(ff_type: 2) %></li>
-      </ul>
+            <li><%= link_to '筋トレ',foods_path(ff_type: 1) %></li>
+            <li><%= link_to 'ダイエット',foods_path(ff_type: 2) %></li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -24,9 +24,9 @@
       <% if date.sunday? %>
         <span style="color: red;"><%= date.day %></span>
       <% elsif date.saturday? %>
-       <span style="color: blue;"><%= date.day %></span>
+        <span style="color: blue;"><%= date.day %></span>
       <% else %>
-       <%= date.day %>
+        <%= date.day %>
       <% end %>
     <% end %>
   </main>
@@ -57,31 +57,31 @@
       <li>運動時間  :<%= @entry.ex_time_3 %></li>
       <li>カロリー  :<%= @entry.ex_amount_3 %></li>
       <li>食事 朝   :<% if (@entry.meal_asa == true) %>
-                        〇
+                      〇
                     <% else %>
-                        ✖
+                      ✖
                     <% end %>
       </li>
       <li>食事 昼   :<% if (@entry.meal_hiru == true) %>
-                        〇
+                      〇
                     <% else %>
-                        ✖
+                      ✖
                     <% end %>
       </li>
       <li>食事 晩   :<% if (@entry.meal_asa == true) %>
-                        〇
+                      〇
                     <% else %>
-                        ✖
+                      ✖
                     <% end %>
       </li>
       <li>間食      :<% if (@entry.snack == true) %>
-                        〇
+                      〇
                     <% else %>
-                        ✖
+                      ✖
                     <% end %>
       </li>
       <li>食べたもの :<%= @entry.snack_memo %></li>
-      <li>体調      :
+      <li>体調       
         <% case @entry.condition %>
           <% when 0 then %>
             良い

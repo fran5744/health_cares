@@ -16,31 +16,36 @@
  */
   .data {
     text-align:center;
-   }
+  }
 
-   .container {
+  .container {
     width: 1300px;
     display: -webkit-flex;
     display: flex;
   }
+
   .main {
     display: block;
     width: 800px;
     margin-left: 50px;
     margin-right: auto;
   }
+
   .sidebar_l {
     width: 200px;
     background-color: #FFF6D9 ;
   }
+
   .sidebar {
     width: 200px;
     background-color:rgb(252, 224, 192);
     margin-left: auto;
   }
+
   .sidebar__item {
     margin-bottom: 20px;
   }
+
   .sidebar__item--fixed {
     position: sticky;
     margin-bottom: 0;
@@ -53,7 +58,7 @@
     padding-bottom: 56.25%;
     padding-top: 30px; height: 0; overflow: hidden;
   }
-  
+
   .youtube-container iframe {
     position: absolute;
     top: 0;
@@ -61,9 +66,6 @@
     width: 100%;
     height: 100%;
   }
-
-
-
 
   ul.sidenav {
     list-style-type: none;
@@ -75,21 +77,25 @@
     position: relative;
     overflow: auto;
   }
+
   ul.sidenav li a {
     display: block;
     color: #000000;
     padding: 8px 16px;
     text-decoration: none;
   }
+
   ul.sidenav li a:hover:not(.active) {
     background-color: #1b2538;
     color: white;
   }
+
   div.content {
     margin-left: 25%;
     padding: 1px 16px;
     height: 1000px;
   }
+
   @media screen and (max-width: 900px) {
     ul.sidenav {
       width: 100%;
@@ -104,6 +110,7 @@
       margin-left: 0;
     }
   }
+
   @media screen and (max-width: 480px) {
     ul.sidenav li a {
       text-align: center;
@@ -115,9 +122,11 @@
     overflow: hidden;
     transition: .5s;
   }
+
   .sidenav li li a {
     border-top: 1px solid #eee;
   }
+
   .sidenav li:hover > ul > li {
     height: 2rem;
     overflow: visible;
@@ -129,16 +138,30 @@
 
   table{
     width: 100%;
+    border-spacing: 0;
+  }
+
+  table th{
+    border-bottom: solid 2px #fb5144;
+    padding: 10px 0;
+  }
+
+  table td{
+    border-bottom: solid 2px #ddd;
+    text-align: center;
+    padding: 10px 0;
   }
 
   .memo {
     background-color: rgb(253, 214, 128);
   }
+
   .memo_entry {
     list-style: none;
     text-align: center;
     font-size: 18px;
   }
+
   body {
     background: linear-gradient( 135deg, #f7df9ef8, rgb(247, 236, 213) );
   }
@@ -146,6 +169,7 @@
   .simple-calendar {
     background-color: white;
   }
+
   .table-striped th {
     text-align: center;
     font-size: 18px;
@@ -166,3 +190,31 @@
     border :1px solid #eee;
     font-size :16px;
   }
+
+  .btn {
+    padding: 6px 15px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none !important;
+    font-size: 1.2em;
+    border-radius: 5px
+}
+
+.btn01 {
+    background-color: #11A9B5;
+    border: 2px solid #11A9B5;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn01:hover {
+    background-color: transparent;
+    border: 2px solid #11A9B5;
+    color: #11A9B5 !important;
+}

@@ -8,36 +8,35 @@
 <center><h1><%= @today %> (<%= @yobi %>)</h1></center>
 <%= @user_id %><a>さんこんにちは！！</a>
 
-
 <nav class="period">
-<div align="center">
-<ul>
-   <li><%= link_to '週',home_top_path(period: "week") %></li>
-   <li><%= link_to '月',home_top_path(period: "month") %></li>
-   <li><%= link_to '3カ月',home_top_path(period: "3month") %></li>
-   <li><%= link_to '6カ月',home_top_path(period: "6month") %></li>
-  </ul>
-</div>
+  <div align="center">
+    <ul>
+      <li><%= link_to '週',home_top_path(period: "week") %></li>
+      <li><%= link_to '月',home_top_path(period: "month") %></li>
+      <li><%= link_to '3カ月',home_top_path(period: "3month") %></li>
+      <li><%= link_to '6カ月',home_top_path(period: "6month") %></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container">
   <div class="sidebar_l">
-      <div class="sidebar_item">
-        <ul class="sidenav">
-          <li><%= '動画' %>
-            <ul>
-              <li><%= link_to '筋トレ',posts_path(m_type: 1) %></li>
-              <li><%= link_to 'ダイエット',posts_path(m_type: 2) %></li>
-            </ul>
-          </li>
-          <li><%= '食べ物' %>
-            <ul>
-              <li><%= link_to '筋トレ',foods_path(ff_type: 1) %></li>
-              <li><%= link_to 'ダイエット',foods_path(ff_type: 2) %></li>
-            </ul>
-          </li>
-        </ul>
-  </div>
+    <div class="sidebar_item">
+      <ul class="sidenav">
+        <li><%= '動画' %>
+          <ul>
+            <li><%= link_to '筋トレ',posts_path(m_type: 1) %></li>
+            <li><%= link_to 'ダイエット',posts_path(m_type: 2) %></li>
+          </ul>
+        </li>
+        <li><%= '食べ物' %>
+          <ul>
+            <li><%= link_to '筋トレ',foods_path(ff_type: 1) %></li>
+            <li><%= link_to 'ダイエット',foods_path(ff_type: 2) %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
   <main class="main">
     <div class="data" style="float: left">
