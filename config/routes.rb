@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :foods
   resources :posts
+  root 'logins#login'
   get 'home/top'
   get 'home/calendar_index'
   get 'logins/login'
